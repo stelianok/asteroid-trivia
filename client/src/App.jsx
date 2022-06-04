@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
 
+import LandingPage from './components/LandingPage';
+
 const baseURL = "https://api.nasa.gov/neo/rest/v1/neo/browse/?api_key=BATATA";
 
 
@@ -23,9 +25,9 @@ function App() {
   }, []);
  
   return (
-    <div>
-      <h1> {meteor ? (meteor.name) : ("batata")}</h1>
-    </div>
+    <>
+      <LandingPage/>
+    </>
   );
 }
 
