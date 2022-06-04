@@ -1,16 +1,38 @@
 import styled from "styled-components";
 
-// Create a Title component that'll render an <h1> tag with some styles
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
+const Container = styled.div`
+  display: flex;
+  flex: 1;
+  background-color: #191919
+  color: #fff;
+
 `;
 
-// Create a Wrapper component that'll render a <section> tag with some styles
-const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
+const Header = styled.div`
+
 `;
 
-export {Title, Wrapper};
+const Menu = styled.div`
+`;
+
+const Logo = styled.div`
+  
+`;
+const PageContainer = styled.div``;
+const HomeButton = styled.div``;
+const FeedButton = styled.div``;
+const HeaderBody = styled.div``;
+const Body = styled.div``;
+
+
+export {
+  Container,
+  Header,
+  Menu,
+  Logo,
+  PageContainer,
+  HomeButton,
+  FeedButton,
+  HeaderBody,
+  Body
+} ;
