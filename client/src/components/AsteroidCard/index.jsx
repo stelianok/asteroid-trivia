@@ -1,4 +1,5 @@
 import {
+  BooleanValue,
   CardContainer,
   CardSection,
   CardSectionGroup,
@@ -92,21 +93,23 @@ export default function AsteroidCard() {
           <CardSectionGroup>
             <div className='container'>
               <InformationItem>
-                <img src={Asteroid} alt='Is Danger?' />
+                <span className='emoji'>{isHazardous ? "⚠️" : "✅"}</span>
                 <div>
                   <h3>Is hazardous:</h3>
-                  <span>{isHazardous ? "Yes" : "No"}</span>
+                  <BooleanValue value={isHazardous === "Yes" ? true : false}>
+                    {isHazardous ? "Yes :(" : "No :)"}
+                  </BooleanValue>
                 </div>
               </InformationItem>
               <InformationItem>
-                <img src={Asteroid} alt='Is Danger?' />
+                <span className='emoji'>🗓️</span>
                 <div>
                   <h3>First Seen:</h3>
                   <span>{first_seen}</span>
                 </div>
               </InformationItem>
               <InformationItem>
-                <img src={Asteroid} alt='Is Danger?' />
+                <span className='emoji'>⏱️</span>
                 <div>
                   <h3>Relative Velocity:</h3>
                   <span>
@@ -143,11 +146,6 @@ export default function AsteroidCard() {
             </InformationItem>
           </CardSectionGroup>
         </CardSection>
-      </CardSection>
-      <CardSection>
-        <VerticaLine>
-          <FontAwesomeIcon icon={faChevronRight} size='2x' />
-        </VerticaLine>
       </CardSection>
     </CardContainer>
   );

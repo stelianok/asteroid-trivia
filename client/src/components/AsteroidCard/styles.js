@@ -9,7 +9,7 @@ const CardContainer = styled.div`
 
   gap: 40px;
 
-  background-color: #0a0a0abd;
+  background-color: #0a0a0adb;
   border-radius: 15px;
 
   & > * {
@@ -68,30 +68,30 @@ const InformationItem = styled.div`
     display: flex;
     flex-direction: column;
 
+    margin-left: 1rem;
+
     & > span {
       font-size: 1rem;
-      color: #9f9f9f;
+      color: #c7c7c7;
     }
   }
 
   & > img {
     width: 1.5rem;
     height: 1.5rem;
-    margin-right: 1rem;
+  }
+
+  & > .emoji {
+    font-size: 1.5rem;
+    width: 1.5rem;
   }
 `;
 
-const VerticaLine = styled.div`
-  display: flex;
-  align-items: center;
-
-  & > svg {
-    margin-left: 0.5rem;
-    color: #ffffffe0;
-  }
-
-  border-left: 2px solid #ffffff9e;
-  height: 100%;
+const BooleanValue = styled.span`
+  ${({ value }) => console.log(value)}
+  color: ${({ value: isDanger }) =>
+    isDanger ? "#ff0000" : "#00ff00"} !important;
+  font-weight: 500;
 `;
 
 const CardTitle = styled.h1`
@@ -110,5 +110,5 @@ export {
   CardTitle,
   CardSectionGroup,
   InformationItem,
-  VerticaLine,
+  BooleanValue,
 };
