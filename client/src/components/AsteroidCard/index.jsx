@@ -5,13 +5,9 @@ import {
   CardSectionGroup,
   CardTitle,
   InformationItem,
-  VerticaLine,
 } from "./styles";
 
 import Asteroid from "../../assets/img/Asteroid.svg";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const meteor = {
   id: "2000433",
