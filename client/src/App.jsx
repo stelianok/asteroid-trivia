@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useCallback } from 'react';
 
 import LandingPage from "./components/LandingPage";
 import AsteroidCard from "./components/AsteroidCard";
@@ -12,7 +13,9 @@ function App() {
     console.log("planeta aleatório");
   }
 
-  const [meteor, setMeteor] = useState();
+    let random = Math.floor(Math.random() * meteorArraySize + 1);
+    
+    console.warn(random);
 
   useEffect(() => {
     const fetchData = async () => {
