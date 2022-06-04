@@ -1,9 +1,12 @@
 import React from "react";
+import {Title, Wrapper} from "./styles";
 
 export default function LandingPage(){
   return(
-    <div>
+    <Wrapper>
+    <Title>
       Landing Page
-    </div>
+    </Title>
+  </Wrapper>
   )
 }
