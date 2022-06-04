@@ -1,33 +1,37 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
+import { useCallback } from 'react';
 
-import LandingPage from './components/LandingPage';
 
-const baseURL = "https://api.nasa.gov/neo/rest/v1/neo/browse/?api_key=BATATA";
+const baseURL = "https://api.nasa.gov/neo/rest/v1/neo/browse/?api_key=XbOL6eVBSgeONZepEUOQhgEODrnISyPUHht7iTsC";
+
 
 
 function App() {
-  function GetRandomPlanet(){
-    console.log("planeta aleatório")
-  }
+  const [meteor, setMeteor] = useState(null);
+  
+  const getRandomAsteroid = useCallback((asteroids) => {
+    const meteorArraySize = asteroids.length - 1;
+  
+    console.warn(`tamanho array: ${meteorArraySize}`);
 
-  const [meteor, setMeteor] = useState();
+    let random = Math.floor(Math.random() * meteorArraySize + 1);
+    
+    console.warn(random);
 
-  useEffect(() => { axios.get(baseURL).then((response) => {
-
-      setMeteor(response.data.near_earth_objects[0]);
-      console.log(response.data.near_earth_objects[0]);
-      GetRandomPlanet();
-
-    }).catch(() => {
-      console.log("Deu erro na api")
-    })
+    setMeteor(asteroids[random]);
   }, []);
+
+  useEffect(() => { 
+    axios.get(baseURL).then((response) => {
+      getRandomAsteroid(response.data.near_earth_objects)
+    });
+  },[]);
  
   return (
-    <>
-      <LandingPage/>
-    </>
+    <div>
+      {(meteor) && (meteor.name)}
+    </div>
   );
 }
 
