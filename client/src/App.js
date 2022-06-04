@@ -1,26 +1,32 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
 
-const baseURL = "https://api.nasa.gov/neo/rest/v1/neo/browse/?api_key=BATATA";
+const baseURL = "https://api.nasa.gov/neo/rest/v1/neo/browse/?api_key=NULL";
 
 
 function App() {
-  function GetRandomPlanet(){
-    console.log("planeta aleatório")
-  }
-
+  
   const [meteor, setMeteor] = useState();
 
+  function RandomAsteroid()
+   {
+    
   useEffect(() => { axios.get(baseURL).then((response) => {
-
-      setMeteor(response.data.near_earth_objects[0]);
-      console.log(response.data.near_earth_objects[0]);
-      GetRandomPlanet();
+      var random = Math.floor(Math.random() * 19 + 1);
+      setMeteor(response.data.near_earth_objects[random]);
+      console.log(random)
+      
 
     }).catch(() => {
       console.log("Deu erro na api")
     })
   }, []);
+
+  console.log(meteor);
+
+  }
+
+  RandomAsteroid();
  
   return (
     <div>
