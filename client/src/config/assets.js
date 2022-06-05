@@ -2,35 +2,40 @@ import * as Images from "../assets/img";
 
 /**
  *  Array of all space images.
- * 
+ *
  *  @property {String} name - Name of the asset.
- *  @property {String} path - Path to the asset.
+ *  @property {String} image - Image URL.
  *  @property {String} description - Description of the asset.
  */
-export const SpaceIcons = [
-  {
-    name: "asteroid",
-    path: Images.Asteroid,
+export const SpaceIcons = {
+  Asteroid: {
+    name: "Asteroid",
+    image: Images.Asteroid,
     description: "Asteroid",
   },
-  {
-    name: "real-asteroid",
-    path: Images.RealAsteroid,
+  RealAsteroid: {
+    name: "Real Asteroid",
+    image: Images.RealAsteroid,
     description: "Real Asteroid",
   },
-  {
-    name: "meteor",
-    path: Images.Meteor,
+  Meteor: {
+    name: "Meteor",
+    image: Images.Meteor,
     description: "Meteor",
   },
-  {
-    name: "moon",
-    path: Images.Moon,
+  Moon: {
+    name: "Moon",
+    image: Images.Moon,
     description: "Moon",
   },
-  {
+  Earth: {
     name: "Earth",
-    path: Images.Earth,
+    image: Images.Earth,
     description: "Earth",
   },
-];
+  Sun: {
+    name: "Sun",
+    image: Images.Sun,
+    description: "Sun",
+  },
+};

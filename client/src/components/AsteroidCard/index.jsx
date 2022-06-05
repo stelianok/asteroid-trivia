@@ -9,6 +9,9 @@ import {
 
 import Asteroid from "../../assets/img/Asteroid.svg";
 
+import { SpaceIcons } from "../../config/assets";
+import commify from "../../helpers/functions";
+
 const meteor = {
   id: "2000433",
   neo_reference_id: "2000433",
@@ -72,15 +75,23 @@ export default function AsteroidCard() {
     ],
   } = meteor;
 
+  console.log(SpaceIcons);
+
   return (
     <CardContainer>
       <CardSection padding='0'>
         <span id='asteroid-id'>#{id}</span>
         <img src={Asteroid} alt='Asteroid' width={250} />
-        <label htmlFor='orbit-body'>
-          <img src={Asteroid} alt='Asteroid' width={20} />
-          Orbiting body:
-          <span id='orbit-body'> {orbiting_body}</span>
+        <label
+          htmlFor='orbit-body'
+          aria-label='Celestial body that the asteroid is orbiting'
+        >
+          <img
+            src={SpaceIcons[orbiting_body]?.image}
+            width={30}
+            alt='Celestial body that the asteroid is orbiting'
+          />
+          <span id='orbit-body'>{`Orbiting body:  ${orbiting_body}`}</span>
         </label>
       </CardSection>
       <CardSection>
@@ -89,19 +100,19 @@ export default function AsteroidCard() {
           <CardSectionGroup>
             <div className='container'>
               <InformationItem>
+                <span className='emoji'>🗓️</span>
+                <div>
+                  <h3>First Seen:</h3>
+                  <span>{first_seen}</span>
+                </div>
+              </InformationItem>
+              <InformationItem>
                 <span className='emoji'>{isHazardous ? "⚠️" : "✅"}</span>
                 <div>
                   <h3>Is hazardous:</h3>
                   <BooleanValue value={isHazardous === "Yes" ? true : false}>
                     {isHazardous ? "Yes :(" : "No :)"}
                   </BooleanValue>
-                </div>
-              </InformationItem>
-              <InformationItem>
-                <span className='emoji'>🗓️</span>
-                <div>
-                  <h3>First Seen:</h3>
-                  <span>{first_seen}</span>
                 </div>
               </InformationItem>
               <InformationItem>
@@ -119,27 +130,39 @@ export default function AsteroidCard() {
             <div className='container'>
               <h3>Missed distance:</h3>
               <InformationItem>
-                <img src={Asteroid} alt='Is Danger?' />
+                <img
+                  src={SpaceIcons["Sun"]?.image}
+                  width={40}
+                  alt='Is Danger?'
+                />
                 <div>
                   <h3>Astronomical:</h3>
-                  <span>{Number(astronomical).toPrecision(10)}</span>
+                  <span>{Number(commify(astronomical)).toPrecision(4)} ua</span>
                 </div>
               </InformationItem>
               <InformationItem>
-                <img src={Asteroid} alt='Is Danger?' />
+                <img
+                  src={SpaceIcons["Moon"]?.image}
+                  width={40}
+                  alt='Is Danger?'
+                />
+                <div>
+                  <h3>lunar:</h3>
+                  <span>{Number(commify(lunar)).toPrecision(4)} una</span>
+                </div>
+              </InformationItem>
+              <InformationItem>
+                <img
+                  src={SpaceIcons["Earth"]?.image}
+                  width={40}
+                  alt='Distance units in kilometers '
+                />
                 <div>
                   <h3>kilometers:</h3>
-                  <span>{Number(kilometers).toPrecision(10)}</span>
+                  <span>{commify(Number(kilometers).toPrecision(4))} km</span>
                 </div>
               </InformationItem>
             </div>
-            <InformationItem>
-              <img src={Asteroid} alt='Is Danger?' />
-              <div>
-                <h3>lunar:</h3>
-                <span>{Number(lunar).toPrecision(10)}</span>
-              </div>
-            </InformationItem>
           </CardSectionGroup>
         </CardSection>
       </CardSection>

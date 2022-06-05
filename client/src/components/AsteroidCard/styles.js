@@ -9,7 +9,7 @@ const CardContainer = styled.div`
 
   gap: 40px;
 
-  background-color: #0a0a0adb;
+  background-color: #0a0a0af2;
   border-radius: 15px;
 
   & > * {
@@ -30,6 +30,15 @@ const CardSection = styled.section`
 
   & > span {
     font-size: 0.8rem;
+  }
+
+  & > label {
+    display: flex;
+    align-items: center;
+
+    & > img {
+      margin-right: 1rem;
+    }
   }
 
   & > img {
@@ -54,6 +63,8 @@ const CardSectionGroup = styled.div`
 
   & > h2,
   h3 {
+    text-transform: capitalize;
+    font-size: 1.2rem;
     font-weight: normal;
     margin: 0;
   }
@@ -72,7 +83,14 @@ const InformationItem = styled.div`
 
     & > span {
       font-size: 1rem;
+      // color: #fff;
       color: #c7c7c7;
+    }
+
+    & > h3 {
+      font-size: 1.1rem;
+      color: #fff;
+      // color: #c7c7c7;
     }
   }
 
@@ -88,7 +106,6 @@ const InformationItem = styled.div`
 `;
 
 const BooleanValue = styled.span`
-  ${({ value }) => console.log(value)}
   color: ${({ value: isDanger }) =>
     isDanger ? "#ff0000" : "#00ff00"} !important;
   font-weight: 500;
