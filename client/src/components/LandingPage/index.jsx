@@ -56,8 +56,8 @@ export default function LandingPage() {
         )}
       </Header>
       <Body>
-        {selectedAsteroid && (
-          <AsteroidTriviaCard asteroidData={selectedAsteroid} triviaType="speed" />
+        {asteroids && (
+          <AsteroidTriviaCard asteroids={asteroids} triviaType="speed" />
         )}
       </Body>
     </>
