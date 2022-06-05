@@ -10,7 +10,7 @@ import {
 import Asteroid from "../../assets/img/Asteroid.svg";
 
 import { SpaceIcons } from "../../config/assets";
-import Commify from "../../utils/commify";
+import Commify from "../../utils/Commify";
 
 const meteor = {
   id: "2000433",
@@ -120,7 +120,7 @@ export default function AsteroidCard() {
                 <div>
                   <h3>Relative Velocity:</h3>
                   <span>
-                    {Number(kilometers_per_hour).toPrecision(10)} km/h
+                    {Number(kilometers_per_hour).toPrecision(4)} km/h
                   </span>
                 </div>
               </InformationItem>

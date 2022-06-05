@@ -9,6 +9,11 @@ import EarthPlanet from "./Earth-Planet.svg";
 import AnotherPlanet from "./Purple-Planet.svg";
 import MarsPlanet from "./Mars-Planet.svg";
 
+import HorizontalLogoBlack from "./Logo-X-black.svg";
+import HorizontalLogoWhite from "./Logo-X-white.svg";
+
+import Noise from "./Noise.png";
+
 export {
   Asteroid,
   RealAsteroid,
@@ -19,4 +24,7 @@ export {
   EarthPlanet,
   AnotherPlanet,
   MarsPlanet,
+  HorizontalLogoBlack,
+  HorizontalLogoWhite,
+  Noise,
 };
