@@ -6,14 +6,12 @@ import { animalsSpeed, animalsWidth } from "../../utils/animals";
 import { Container } from "./styles";
 import GetRandomIntfromInterval from "../../utils/GetRandomIntFromInterval";
 
-//Example for App.js
-// {asteroids && (<AsteroidTriviaCard asteroids={asteroids} triviaType="diameter"/> )}
-
 //trivia type must be speed or diameter
-export default function AsteroidTriviaCard({ asteroids, triviaType = "speed" }) {
+export default function AsteroidTriviaCard({ asteroidData, triviaType = "speed" }) {
   const [asteroid, setAsteroid] = useState();
 
-  function GetUsefulAsteroidData(RandomAsteroid) {
+  const getUsefulAsteroidData = useCallback((asteroid) => {
+
     const {
       id,
       name,
@@ -21,7 +19,7 @@ export default function AsteroidTriviaCard({ asteroids, triviaType = "speed" }) 
       is_potentially_hazardous_asteroid,
       close_approach_data,
       orbital_data,
-    } = RandomAsteroid;
+    } = asteroid;
 
     const estimated_diameter_min = estimated_diameter.kilometers.estimated_diameter_min;
     const estimated_diameter_max = estimated_diameter.kilometers.estimated_diameter_max;
@@ -45,22 +43,14 @@ export default function AsteroidTriviaCard({ asteroids, triviaType = "speed" }) 
       },
     }
 
-    return randomFormattedAsteroid;
+    console.warn(`Selected trivia asteroid ${randomFormattedAsteroid.name}`);
 
-  }
-
-  const getRandomAsteroid = useCallback((asteroids) => {
-    const asteroidArraySize = asteroids.length - 1;
-
-    let randomIndex = GetRandomIntfromInterval(0, asteroidArraySize);
-
-    console.warn(`Selected trivia asteroid ${asteroids[randomIndex].name}`);
-    setAsteroid(GetUsefulAsteroidData(asteroids[randomIndex]));
+    setAsteroid(randomFormattedAsteroid);
 
   }, []);
 
   useEffect(() => {
-    getRandomAsteroid(asteroids);
+    getUsefulAsteroidData(asteroidData);
   }, []);
 
   return (
