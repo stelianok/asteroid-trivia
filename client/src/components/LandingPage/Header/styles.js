@@ -13,6 +13,12 @@ const HeaderBody = styled.div`
   display: flex;
   justify-content: flex-end;
   margin: 5rem 3rem 0 0;
+
+  @media (max-width: 768px) {
+    margin: 5rem 0 0 0;
+
+    justify-content: center;
+  }
 `;
 
 const HeaderBackground = styled.div`
