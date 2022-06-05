@@ -71,7 +71,6 @@ const CardSectionGroup = styled.div`
     flex-direction: column;
     gap: 5px;
   }
-
   & > h2,
   h3 {
     text-transform: capitalize;
