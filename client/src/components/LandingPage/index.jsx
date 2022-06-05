@@ -12,7 +12,7 @@ import Header from "./Header";
 import AsteroidTriviaCard from "../AsteroidTriviaCard";
 
 export default function LandingPage() {
-  const [asteroids, setAsteroids] = useState(null);
+  const [selectedAsteroid, setSelectedAsteroid] = useState(null);
 
   const AsteroidCardMemoized = memo(
     AsteroidCard,
@@ -31,8 +31,8 @@ export default function LandingPage() {
           }
         })
         .then(({ data }) => {
-          console.log(data.near_earth_objects[0].name)
-          setAsteroids(data.near_earth_objects);
+          setSelectedAsteroid(randomAsteroid(data.near_earth_objects));
+
         })
         .catch((err) => {
           console.error(err);
@@ -45,19 +45,19 @@ export default function LandingPage() {
   return (
     <>
       <Header>
-        {asteroids && (
+        {selectedAsteroid && (
           <motion.div
             id='asteroid-card-motion'
             whileHover={{ scale: 1.05 }}
             {...Animations.fadeRightIn}
           >
-            <AsteroidCardMemoized asteroid={randomAsteroid(asteroids)} />
+            <AsteroidCardMemoized asteroid={selectedAsteroid} />
           </motion.div>
         )}
       </Header>
       <Body>
-        {asteroids && (
-          <AsteroidTriviaCard asteroidData={randomAsteroid(asteroids)} triviaType="speed" />
+        {selectedAsteroid && (
+          <AsteroidTriviaCard asteroidData={selectedAsteroid} triviaType="speed" />
         )}
       </Body>
     </>
