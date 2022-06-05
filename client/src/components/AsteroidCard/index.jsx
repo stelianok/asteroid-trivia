@@ -103,7 +103,7 @@ export default function AsteroidCard({ asteroid }) {
                 <img
                   src={SpaceIcons["Earth"]?.image}
                   width={40}
-                  alt='Distance units in kilometers '
+                  alt='Distance units in kilometers'
                 />
                 <div>
                   <h3>kilometers:</h3>
