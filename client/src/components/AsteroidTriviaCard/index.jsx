@@ -45,6 +45,8 @@ export default function AsteroidTriviaCard({ asteroidData, triviaType = "speed" 
 
     console.warn(`Selected trivia asteroid ${randomFormattedAsteroid.name}`);
 
+    setAsteroid(randomFormattedAsteroid);
+
   }, []);
 
   useEffect(() => {
