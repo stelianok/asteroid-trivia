@@ -1,23 +1,40 @@
-import AsteroidCard from "../AsteroidCard";
+import { useState, useEffect } from "react";
 
-import {
-  Container,
-  Header,
-  Menu,
-  Logo,
-  PageContainer,
-  HomeButton,
-  FeedButton,
-  HeaderBody,
-  Body,
-} from "./styles";
+import AsteroidCard from "../AsteroidCard";
+import API from "../../services/api";
+
+import { Header, HeaderBody, Body } from "./styles";
 
 export default function LandingPage() {
+  const [asteroids, setAsteroids] = useState(null);
+
+  const randomAsteroid = (asteroids) =>
+    asteroids[Math.floor(Math.random() * asteroids.length)];
+
+  useEffect(() => {
+    async function fetchData() {
+      await API.get("/neo/browse/")
+        .then(({ data }) => {
+          setAsteroids(data.near_earth_objects);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <Header>
         <HeaderBody>
-          <AsteroidCard id='asteroid-card' />
+          {asteroids && (
+            <AsteroidCard
+              id='asteroid-card'
+              asteroid={randomAsteroid(asteroids)}
+            />
+          )}
         </HeaderBody>
       </Header>
       <Body></Body>

@@ -21,6 +21,16 @@ const ActionsGroup = styled(Group)`
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
+
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #5e2990;
+    }
   }
 `;
 

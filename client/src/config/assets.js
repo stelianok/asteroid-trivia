@@ -33,6 +33,16 @@ export const SpaceIcons = {
     image: Images.Earth,
     description: "Earth",
   },
+  Mars: {
+    name: "Mars",
+    image: Images.MarsPlanet,
+    description: "Mars",
+  },
+  Default: {
+    name: "Default",
+    image: Images.AnotherPlanet,
+    description: "Another Planet (Default)",
+  },
   Sun: {
     name: "Sun",
     image: Images.Sun,
