@@ -10,7 +10,6 @@ import { Animations } from "../../utils/Animations";
 import AsteroidCard from "../AsteroidCard";
 import Header from "./Header";
 
-
 export default function LandingPage() {
   const [asteroids, setAsteroids] = useState(null);
 
