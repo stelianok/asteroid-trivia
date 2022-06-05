@@ -7,17 +7,9 @@ import  { Container } from "./styles";
 
 export default function AsteroidTriviaCard({asteroids}) {
   const [asteroid, setAsteroid] = useState();
-  useEffect(() => {
-    
-    getRandomAsteroid(asteroids);
-  }, []);
+  
 
-
-  const getRandomAsteroid = useCallback((asteroids) => {
-    const asteroidArraySize = asteroids.length - 1;
-
-    let random = Math.floor(Math.random() * asteroidArraySize + 1);
-    
+  function GetUsefulAsteroidData(RandomAsteroid){
     const {
       id, 
       name, 
@@ -25,14 +17,13 @@ export default function AsteroidTriviaCard({asteroids}) {
       is_potentially_hazardous_asteroid,
       close_approach_data,
       orbital_data,
-    } = asteroids[random];
+    } = RandomAsteroid;
     
-    console.warn(asteroids[random]);
-
     const estimated_diameter_min = estimated_diameter.kilometers.estimated_diameter_min;
     const estimated_diameter_max = estimated_diameter.kilometers.estimated_diameter_max;
     
     const last_approach_data = close_approach_data[close_approach_data.length - 1];
+
     const miss_distance = last_approach_data.miss_distance;
 
     const randomFormattedAsteroid = {
@@ -48,16 +39,25 @@ export default function AsteroidTriviaCard({asteroids}) {
         lunar:  miss_distance.lunar,
         kilometers:  miss_distance.kilometers
       },
-
     }
     
-    console.warn(randomFormattedAsteroid);
+    return randomFormattedAsteroid;
 
-    setAsteroid(randomFormattedAsteroid);
+  }
+  
+  const getRandomAsteroid = useCallback((asteroids) => {
+    const asteroidArraySize = asteroids.length - 1;
+
+    let randomIndex = Math.floor(Math.random() * asteroidArraySize + 1);
+
+    setAsteroid(GetUsefulAsteroidData(asteroids[randomIndex]));
 
   }, []);
 
-  
+  useEffect(() => {
+    getRandomAsteroid(asteroids);
+  }, []);
+
   return (
     <Container>
       <strong>Speed Comparison</strong>
