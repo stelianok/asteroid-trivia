@@ -97,15 +97,14 @@ function App() {
   return (
     <div>
       <strong>The {meteor.name} is... </strong>
-      <ul>
+      {/* <ul>
         {animalsWidth.map((animal) => {
           return(
             <li>{animal.icon} {Calculate} Larger than a {animal.name}</li>
           )
         })}
         <li>{animal.icon} larger than {} </li>
-      </ul>
-      - {(meteor) && (meteor.name)}
+      </ul> */}
     </div>
   );
 }
