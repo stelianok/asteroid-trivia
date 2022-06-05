@@ -1,19 +1,46 @@
-import React, {useState, useEffect} from 'react';
+import { useState, useEffect } from "react";
+
+import { MantineProvider, ColorSchemeProvider } from "@mantine/core";
 import axios from "axios";
 
-const baseURL = "https://api.nasa.gov/neo/rest/v1/neo/browse/?api_key=XbOL6eVBSgeONZepEUOQhgEODrnISyPUHht7iTsC";
+import { useToggle } from "@mantine/hooks";
+
+import { ApplicationTheme } from "./config/theme";
+
+import LandingPage from "./components/LandingPage";
+import Layout from "./components/Layout";
+
+const baseURL =
+  "https://api.nasa.gov/neo/rest/v1/neo/browse/?api_key=XbOL6eVBSgeONZepEUOQhgEODrnISyPUHht7iTsC";
 
 function App() {
   const [asteroid, setAsteroid] = useState(null);
+  const [colorScheme, toggleColorScheme] = useToggle("dark", [
+    "light",
+    "dark",
+  ]);
 
-  useEffect(() => { 
+  useEffect(() => {
     axios.get(baseURL).then((response) => {
       setAsteroid(response.data.near_earth_objects);
     });
-  },[]);
- 
+  }, []);
+
   return (
-    <div>pamonha</div>
+    <ColorSchemeProvider
+      colorScheme={colorScheme}
+      toggleColorScheme={toggleColorScheme}
+    >
+      <MantineProvider
+        theme={{ colorScheme, ...ApplicationTheme }}
+        withGlobalStyles
+        withNormalizeCSS
+      >
+        <Layout>
+          <LandingPage />
+        </Layout>
+      </MantineProvider>
+    </ColorSchemeProvider>
   );
 }
 

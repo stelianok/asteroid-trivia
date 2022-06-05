@@ -50,7 +50,7 @@ export const SpaceIcons = {
 export const SpacePlanets = {
   Earth: {
     name: "Earth",
-    image: Images.Earth,
+    image: Images.EarthPlanet,
     description: "Earth, our planet",
   },
   AnotherPlanet: {
@@ -60,8 +60,25 @@ export const SpacePlanets = {
   },
   Mars: {
     name: "Mars",
-    image: Images.Mars,
+    image: Images.MarsPlanet,
     description:
       "Mars is a planet in our solar system, with a diameter of 6,779 km and reddish-brown color",
+  },
+};
+
+export const ApplicationIcons = {
+  HorizontalLogo: {
+    name: "Horizontal Logo",
+    theme: {
+      dark: Images.HorizontalLogoBlack,
+      light: Images.HorizontalLogoWhite,
+    },
+    description: "Horizontal Logo",
+  },
+};
+
+export const Patterns = {
+  Noise: {
+    path: Images.Noise,
   },
 };

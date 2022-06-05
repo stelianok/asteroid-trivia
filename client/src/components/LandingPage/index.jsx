@@ -1,5 +1,3 @@
-import React from "react";
-
 import AsteroidCard from "../AsteroidCard";
 
 import {
@@ -11,27 +9,18 @@ import {
   HomeButton,
   FeedButton,
   HeaderBody,
-  Body
+  Body,
 } from "./styles";
 
-export default function LandingPage(){
-  return(
-   <Container>
-     <Header>
-       <Menu>
-       <Logo>Assteroid</Logo>
-       <PageContainer>
-         <HomeButton>Home</HomeButton>
-         <FeedButton>Feed</FeedButton>
-       </PageContainer>
-       </Menu>
-       <HeaderBody>
-         <AsteroidCard/>
-       </HeaderBody>
-     </Header>
-     <Body>
-       
-     </Body>
-   </Container>
-  )
+export default function LandingPage() {
+  return (
+    <>
+      <Header>
+        <HeaderBody>
+          <AsteroidCard id='asteroid-card' />
+        </HeaderBody>
+      </Header>
+      <Body></Body>
+    </>
+  );
 }
