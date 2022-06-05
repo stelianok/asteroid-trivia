@@ -49,7 +49,7 @@ export default function AsteroidTriviaCard({
       },
     };
 
-    return randomFormattedAsteroid;
+    console.warn(`Selected trivia asteroid ${randomFormattedAsteroid.name}`);
 
   }, []);
 
