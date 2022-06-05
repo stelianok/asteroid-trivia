@@ -127,7 +127,7 @@ const animalsSpeed = [
     }
     ,
     {
-      "name": "Royal Bengal Tiger",
+      "name": "Bengal Tigers",
       "icon": "🐅",
       "width": 2.6
     }
@@ -139,19 +139,19 @@ const animalsSpeed = [
     }
     ,
     {
-      "name": "Mokeys",
+      "name": "Mandrills",
       "icon": "🐒",
       "width": 1.1
     }
     ,
     {
-      "name": "Rat",
+      "name": "Rats",
       "icon": "🐀",
       "width": 0.2
     }
     ,
     {
-      "name": "Ant",
+      "name": "Ants",
       "icon": "🐜",
       "width": 0.072
     }
