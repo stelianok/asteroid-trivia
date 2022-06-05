@@ -80,48 +80,48 @@ const animalsSpeed = [
   
   const animalsWidth = [
     {
-      "name": "Blue Whale",
+      "name": "Blue Whales",
       "icon": "🐋",
       "width": 24
     },
     {
-      "name": "Shark",
+      "name": "White Sharks",
       "icon": "🦈",
       "width": 6.4
     },
     {
-      "name": "Giraffe",
+      "name": "Giraffes",
       "icon": "🦒",
       "width": 6
     },
     {
-      "name": "Elephant",
+      "name": "Elephants",
       "icon": "🐘",
       "width": 6 
     },
     {
-      "name": "Octopus",
+      "name": "Octopuses",
       "icon": "🐙",
       "width": 5
     },
     {
-      "name": "White rhino",
+      "name": "White Rhinos",
       "icon": "🦏",
       "width": 4
     },
     {
-      "name": "Hipoppotamus",
+      "name": "Hippopotamuses",
       "icon": "🦛",
       "width": 3.6
     },
     {
-      "name": "Indian Peafowl",
+      "name": "Indian Peafowls",
       "icon": "🦚",
       "width":  3
     }
     ,
     {
-      "name": "Kangaroo",
+      "name": "Kangaroos",
       "icon": "🦘",
       "width": 2.8
     }
@@ -133,13 +133,13 @@ const animalsSpeed = [
     }
     ,
     {
-      "name": "Pig",
+      "name": "Pigs",
       "icon": "🐖",
       "width": 1.6
     }
     ,
     {
-      "name": "Monkey",
+      "name": "Mokeys",
       "icon": "🐒",
       "width": 1.1
     }

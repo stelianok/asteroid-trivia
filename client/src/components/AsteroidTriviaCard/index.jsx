@@ -38,7 +38,7 @@ export default function AsteroidTriviaCard({asteroids}) {
     const randomFormattedAsteroid = {
       id,
       name,
-      average_estimated_diameter: (estimated_diameter_max+ estimated_diameter_min)/2,
+      average_estimated_diameter: ((estimated_diameter_max+ estimated_diameter_min)/2)*1000,
       is_potentially_hazardous_asteroid,
       relative_velocity: last_approach_data.relative_velocity.kilometers_per_hour,
       last_seen: orbital_data.last_observation_date,
@@ -64,7 +64,15 @@ export default function AsteroidTriviaCard({asteroids}) {
       <ul>
       {(asteroid) && animalsSpeed.map((animal) => 
           (
-            <li>{animal.icon} {CalculateSpeed(asteroid.relative_velocity, animal.speed)} times faster than an {animal.name}</li>
+            <li key={animal.name}>{animal.icon} {CalculateSpeed(asteroid.relative_velocity, animal.speed)} times faster than an {animal.name}</li>
+          )
+      )}
+      </ul>
+      <strong>The asteroid diameter is equal to: </strong>
+      <ul>
+      {(asteroid) && animalsWidth.map((animal) => 
+          (
+            <li key={animal.name}>{animal.icon} {CalculateWidth(parseFloat(asteroid.average_estimated_diameter), animal.width)}  {animal.name} aligned</li>
           )
       )}
       </ul>
