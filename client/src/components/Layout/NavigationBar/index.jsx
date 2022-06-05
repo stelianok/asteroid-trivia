@@ -7,7 +7,7 @@ import { ApplicationIcons } from "../../../config/assets";
 import { Actions } from "../../../config/actions";
 import { MediaQuery } from "@mantine/core";
 
-export default function NavigationBar() {
+export default function NavigationBar({ actions }) {
   const colorScheme = useColorScheme(),
     Logo = ApplicationIcons.HorizontalLogo.theme[colorScheme];
 
