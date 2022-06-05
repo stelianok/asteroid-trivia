@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
-import AsteroidTriviaCard from './components/AsteroidTriviaCard';
+// import AsteroidTriviaCard from './components/AsteroidTriviaCard';
 
 const baseURL = "https://api.nasa.gov/neo/rest/v1/neo/browse/?api_key=XbOL6eVBSgeONZepEUOQhgEODrnISyPUHht7iTsC";
 
@@ -16,9 +16,7 @@ function App() {
   },[]);
  
   return (
-    <>
-    {asteroids && (<AsteroidTriviaCard asteroids={asteroids}/>)}
-    </>
+    <div>Pamonha</div>
   );
 }
 

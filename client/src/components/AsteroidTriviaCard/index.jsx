@@ -5,9 +5,12 @@ import {animalsSpeed, animalsWidth} from "../../utils/animals";
 
 import  { Container } from "./styles";
 
-export default function AsteroidTriviaCard({asteroids}) {
+//Example for App.js
+// {asteroids && (<AsteroidTriviaCard asteroids={asteroids} triviaType="diameter"/> )}
+
+//trivia type must be speed or diameter
+export default function AsteroidTriviaCard({asteroids, triviaType="speed"}) {
   const [asteroid, setAsteroid] = useState();
-  
 
   function GetUsefulAsteroidData(RandomAsteroid){
     const {
@@ -60,22 +63,35 @@ export default function AsteroidTriviaCard({asteroids}) {
 
   return (
     <Container>
-      <strong>Speed Comparison</strong>
-      <ul>
-      {(asteroid) && animalsSpeed.map((animal) => 
-          (
-            <li key={animal.name}>{animal.icon} {CalculateSpeed(asteroid.relative_velocity, animal.speed)} times faster than an {animal.name}</li>
-          )
-      )}
-      </ul>
-      <strong>The asteroid diameter is equal to: </strong>
-      <ul>
-      {(asteroid) && animalsWidth.map((animal) => 
-          (
-            <li key={animal.name}>{animal.icon} {CalculateWidth(parseFloat(asteroid.average_estimated_diameter), animal.width)}  {animal.name} aligned</li>
-          )
-      )}
-      </ul>
+     
+      {(triviaType == "speed") ? 
+      (
+        <>
+          <strong>Speed Comparison</strong>
+          <ul>
+          {(asteroid) && animalsSpeed.map((animal) => 
+            (
+              <li key={animal.name}>{animal.icon} {CalculateSpeed(asteroid.relative_velocity, animal.speed)} times faster than an {animal.name}</li>
+            )
+          )}
+          </ul>
+        </>
+
+      ) : (
+      <>
+        <strong>The asteroid diameter is equal to: </strong>
+        <ul>
+        {(asteroid) && animalsWidth.map((animal) => 
+            (
+              <li key={animal.name}>{animal.icon} {CalculateWidth(parseFloat(asteroid.average_estimated_diameter), animal.width)}  {animal.name} aligned</li>
+            )
+        )}
+        </ul>
+      </>
+      )
+     
+      }
+      
     </Container>
     
   )
