@@ -1,7 +1,8 @@
 import React, {useState, useEffect, useCallback} from "react";
 
-// import {CalculateSpeed, CalculateWidth} from "./utils/CalculateTrivia"; 
-// import {animalsSpeed, animalsWidth} from "./utils/animals";
+import {CalculateSpeed, CalculateWidth} from "../../utils/CalculateTrivia"; 
+import {animalsSpeed, animalsWidth} from "../../utils/animals";
+
 import  { Container } from "./styles";
 
 export default function AsteroidTriviaCard({asteroids}) {
@@ -59,7 +60,14 @@ export default function AsteroidTriviaCard({asteroids}) {
   
   return (
     <Container>
-      <strong>Asteroid mano </strong>
+      <strong>Speed Comparison</strong>
+      <ul>
+      {(asteroid) && animalsSpeed.map((animal) => 
+          (
+            <li>{animal.icon} {CalculateSpeed(asteroid.relative_velocity, animal.speed)} times faster than an {animal.name}</li>
+          )
+      )}
+      </ul>
     </Container>
     
   )
