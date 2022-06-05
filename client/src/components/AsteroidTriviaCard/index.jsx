@@ -54,6 +54,7 @@ export default function AsteroidTriviaCard({ asteroids, triviaType = "speed" }) 
 
     let randomIndex = GetRandomIntfromInterval(0, asteroidArraySize);
 
+    console.warn(`Selected trivia asteroid ${asteroids[randomIndex].name}`);
     setAsteroid(GetUsefulAsteroidData(asteroids[randomIndex]));
 
   }, []);
