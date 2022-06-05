@@ -1,16 +1,25 @@
 import styled from "styled-components";
 
+import { Button as ButtonComponent } from "@mantine/core";
+
 const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
   min-width: 400px;
   max-width: 600px;
 
   padding: 20px 20px;
 
-  display: flex;
-  gap: 40px;
-
   background-color: #0a0a0af2;
   border-radius: 15px;
+`;
+
+const CardGroup = styled.div`
+  padding: 20px 20px;
+
+  display: flex;
+  gap: 40px;
 
   z-index: 1001;
 
@@ -62,7 +71,7 @@ const CardSectionGroup = styled.div`
     flex-direction: column;
     gap: 5px;
   }
-  
+
   & > h2,
   h3 {
     text-transform: capitalize;
@@ -120,11 +129,20 @@ const CardTitle = styled.h1`
   color: #a976da;
 `;
 
+const Button = styled(ButtonComponent)`
+  font-size: 1.2rem;
+  height: 100%;
+
+  background-color: ${({ color }) => color};
+`;
+
 export {
   CardContainer,
+  CardGroup,
   CardSection,
   CardTitle,
   CardSectionGroup,
   InformationItem,
   BooleanValue,
+  Button,
 };
