@@ -49,11 +49,5 @@
       "last 1 safari version"
     ]
   },
-<<<<<<< HEAD
   "devDependencies": {}
-=======
-  "devDependencies": {
-    "vite-plugin-babel-macros": "^1.0.6"
-  }
->>>>>>> da2ddb5 (chore: changed react-scripts to viteJS)
 }
