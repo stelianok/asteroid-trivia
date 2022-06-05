@@ -1,14 +1,15 @@
 import { useState, useEffect, memo } from "react";
 import { motion } from "framer-motion";
 
+import { Body } from "./styles";
+
 import API from "../../services/api";
+import GetRandomIntfromInterval from "../../utils/GetRandomIntFromInterval";
+import { Animations } from "../../utils/Animations";
 
 import AsteroidCard from "../AsteroidCard";
 import Header from "./Header";
 
-import { Body } from "./styles";
-
-import { Animations } from "../../utils/Animations";
 
 export default function LandingPage() {
   const [asteroids, setAsteroids] = useState(null);
@@ -23,8 +24,14 @@ export default function LandingPage() {
 
   useEffect(() => {
     async function fetchData() {
-      await API.get("/neo/browse/")
+      await API.get("/neo/browse/",
+        {
+          params: {
+            page: GetRandomIntfromInterval(1, 1469)
+          }
+        })
         .then(({ data }) => {
+          console.log(data.near_earth_objects[0].name)
           setAsteroids(data.near_earth_objects);
         })
         .catch((err) => {
