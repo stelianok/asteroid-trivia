@@ -16,13 +16,17 @@ const baseURL =
 
 function App() {
   const [asteroids, setAsteroids] = useState(null);
-
+  const [colorScheme, toggleColorScheme] = useToggle("dark", [
+    "light",
+    "dark",
+  ]);
+  
   useEffect(() => {
     axios.get(baseURL).then((response) => {
-      setAsteroid(response.data.near_earth_objects);
+      setAsteroids(response.data.near_earth_objects);
     });
   }, []);
-
+  
   return (
     <ColorSchemeProvider
       colorScheme={colorScheme}
