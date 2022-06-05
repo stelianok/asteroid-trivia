@@ -1,5 +1,5 @@
 <h1 align="center">
-	<!-- <img alt="Logo" src=".github/logo.png" width="200px" /> -->
+	<img alt="Logo" src="client/public/favicon.ico" width="32px" />
   AsteroidTrivia
 </h1>
 
@@ -8,42 +8,41 @@
 
 <p align="center"></p>
 
-<p align="center">
+<div>
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/stelianok/codedamn-hackathon-project">
-    <p align="center">
+  <div id="banner">
+    <div>
+      <img alt="Repository size" src="https://img.shields.io/github/repo-size/stelianok/codedamn-hackathon-project">
+    </div>
+    <div>
+      <a href="https://github.com/stelianok/codedamn-hackathon-project/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/stelianok/codedamn-hackathon-project">
+    </div>
+    <div>
+      <a href="https://github.com/stelianok/codedamn-hackathon-project/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/stelianok/codedamn-hackathon-project">
+  </a>
+    </div>
+    <div>
       <a href="https://www.linkedin.com/in/kszinhu/">
         <img alt="Made by" src="https://img.shields.io/badge/made%20by-Cassiano%20Rodrigues-gree">
       </a>
-    </p>
-    <p align="center">
+    </div>
+    <div>
       <a href="https://www.linkedin.com/in/stelianok/">
         <img alt="Made by" src="https://img.shields.io/badge/made%20by-Kauã%20Steliano-gree">
       </a>
-    </p>
-    <p align="center">
+    </div>
+    <div>
       <a href="https://www.linkedin.com/in/vinicius-fiedler">
         <img alt="Made by" src="https://img.shields.io/badge/made%20by-Vinicius%20Fiedler-gree">
       </a>
-    </p>
- </p>
-  
-  <p align="center">
-    <img alt="Repository size" src="https://img.shields.io/github/repo-size/stelianok/codedamn-hackathon-project">
-  </p>
-  <p align="center">
-  <a href="https://github.com/stelianok/codedamn-hackathon-project/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/stelianok/codedamn-hackathon-project">
-  </a>
-  </p>
-  <p align="center">
-  <a href="https://github.com/stelianok/codedamn-hackathon-project/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/stelianok/codedamn-hackathon-project">
-  </a>
-  </p>
-  <p align="center">
+    </div>
+    </div>
+  <div>
   <img alt="GitHub" src="https://img.shields.io/github/license/stelianok/codedamn-hackathon-project">
-  </p>
-</p>
+  </div>
+</div>
 
 
 <p align="center">
@@ -56,31 +55,54 @@
 
 ## 👨🏻‍💻 About the project
 
-- <p> Asteroid is web app cool </p>
+-  [Hackathon of Codedamn](https://codedamn.com/hackfest)
+<p> We used Nasa’s API Asteroids – NeoWs (Near-Earth Object Web Service) to get reliable data about asteroids including their id, name, diameter, speed, last approach, and if it is hazardous.</p>
+
+<p>
+The main technologies that we have used to create our web app were React.js, with some helpful libraries such as styled-components, to better organize our CSS code and application as a whole,  font-awesome to get pretty icons. </p>
+
+<p>
+We have also used Axios, a promise-based HTTP client, to better organize our API calls and avoid code duplication. allowing us to communicate with APIs easily in our React apps 
+</p>
+
+<p>
+Asteroid Trivia has a clean design and a straightforward proposition: show information about asteroids but in a remarkably interesting way. But just showing large numbers does not make us aware of the magnitude of those space objects. For this reason, we decided to compare their data with animals' data.  For example, we show approximately how many aligned blue whales would be necessary to achieve the average asteroid’s diameter. 
+
+</p>
 
 
 
 ## 🚀 Technologies
 
 Technologies that We've used to develop this web client
-
+- [NASA API](https://api.nasa.gov/)
 - [ReactJS](https://reactjs.org/)
-- [React Router DOM](https://reacttraining.com/react-router/)
-- [React Icons](https://react-icons.netlify.com/#/)
 - [Styled Components](https://styled-components.com/)
 - [Axios](https://github.com/axios/axios)
 - [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
-
+- [Vite](https://github.com/vitejs/vite)
 
 ## 💻 Getting started
 
 ### Requirements
+
+
+<br/>
+
+**Configure .env**
+
+You need to create a .env file in the root of the project with the same structure from the .env.example
+
+And Fill it with you [nasa api key](https://api.nasa.gov/), and  the BaseURL.
+
 
 **Clone the project and access the folder**
 
 ```bash
 $ git clone https://github.com/stelianok/codedamn-hackathon-project.git && cd codedamn-hackathon-project
 ```
+
+
 
 **Follow the steps below**
 
@@ -91,9 +113,8 @@ $ yarn
 # Be sure the file 'src/services/api.ts' have the IP to your API
 
 # Start the client
-$ yarn start
+$ yarn dev
 ```
-
 ## 🤔 How to contribute
 
 **Make a fork of this repository**
