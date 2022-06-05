@@ -44,6 +44,10 @@ export default function LandingPage({ refs }) {
       })
         .then(({ data }) => {
           setSelectedAsteroid(randomAsteroid(data.near_earth_objects));
+<<<<<<< HEAD
+=======
+
+>>>>>>> 50ac108 (now only one asteroid is saved with useState.)
         })
         .catch((err) => {
           console.error(err);
