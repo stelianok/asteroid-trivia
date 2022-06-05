@@ -10,6 +10,14 @@ const BasePlanet = styled.div`
 
   width: 200px;
   height: 200px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
 `;
 
 export { BasePlanet };

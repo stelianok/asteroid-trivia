@@ -7,7 +7,10 @@ export const BasePlanet = ({ name, animationConfig, position, size }) => {
   return (
     <motion.div
       {...animationConfig}
-      style={{ position: "absolute", ...position }}
+      style={{
+        position: "absolute",
+        ...position,
+      }}
     >
       <PlanetPattern image={SpaceImages[name].image} style={{ ...size }} />
     </motion.div>
