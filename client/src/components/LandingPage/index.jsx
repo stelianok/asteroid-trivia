@@ -1,13 +1,7 @@
 import AsteroidCard from "../AsteroidCard";
 
 import {
-  Container,
   Header,
-  Menu,
-  Logo,
-  PageContainer,
-  HomeButton,
-  FeedButton,
   HeaderBody,
   Body,
 } from "./styles";
