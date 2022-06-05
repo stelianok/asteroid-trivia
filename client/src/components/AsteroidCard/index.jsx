@@ -1,4 +1,4 @@
-import { useMantineTheme } from "@mantine/core";
+import { MediaQuery, useMantineTheme } from "@mantine/core";
 
 import {
   BooleanValue,
@@ -35,23 +35,32 @@ export default function AsteroidCard({ asteroid }) {
   return (
     <CardContainer>
       <CardGroup>
-        <CardSection padding='0'>
-          <span id='asteroid-id'>#{id}</span>
-          <img src={Asteroid} alt='Asteroid' width={250} />
-          <label
-            htmlFor='orbit-body'
-            aria-label='Celestial body that the asteroid is orbiting'
-          >
-            <img
-              src={SpaceIcons[orbiting_body]?.image ?? SpaceIcons.Default.image}
-              width={30}
-              alt='Celestial body that the asteroid is orbiting'
-            />
-            <span id='orbit-body'>{`Orbiting body:  ${orbiting_body}`}</span>
-          </label>
-        </CardSection>
+        <MediaQuery
+          smallerThan={768}
+          styles={{ display: "none", "&>*": { display: "none" } }}
+        >
+          <CardSection padding='0'>
+            <span id='asteroid-id'>#{id}</span>
+            <img src={Asteroid} alt='Asteroid' width={250} />
+            <span aria-label='Celestial body that the asteroid is orbiting'>
+              <img
+                src={
+                  SpaceIcons[orbiting_body]?.image ?? SpaceIcons.Default.image
+                }
+                width={30}
+                alt='Celestial body that the asteroid is orbiting'
+              />
+              <span id='orbit-body'>{`Orbiting body:  ${orbiting_body}`}</span>
+            </span>
+          </CardSection>
+        </MediaQuery>
         <CardSection>
-          <CardTitle>{name}</CardTitle>
+          <div>
+            <CardTitle>{name}</CardTitle>
+            <MediaQuery smallerThan={768}>
+              <span id='asteroid-id'>#{id}</span>
+            </MediaQuery>
+          </div>
           <CardSection>
             <CardSectionGroup>
               <div className='container'>
