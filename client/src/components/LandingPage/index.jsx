@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 
 import AsteroidCard from "../AsteroidCard";
-import axios from "axios";
+import API from "../../services/api";
 
 import { Header, HeaderBody, Body } from "./styles";
-
-const baseURL = `https://api.nasa.gov/neo/rest/v1/neo/browse/?api_key=${process.env.REACT_APP_NASA_API_KEY}`;
 
 export default function LandingPage() {
   const [asteroids, setAsteroids] = useState(null);
@@ -14,9 +12,17 @@ export default function LandingPage() {
     asteroids[Math.floor(Math.random() * asteroids.length)];
 
   useEffect(() => {
-    axios.get(baseURL).then(({ data }) => {
-      setAsteroids(data.near_earth_objects);
-    });
+    async function fetchData() {
+      await API.get("/neo/browse/")
+        .then(({ data }) => {
+          setAsteroids(data.near_earth_objects);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+
+    fetchData();
   }, []);
 
   return (
