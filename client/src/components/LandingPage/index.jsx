@@ -1,12 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
+import { motion } from "framer-motion";
 
-import AsteroidCard from "../AsteroidCard";
 import API from "../../services/api";
 
-import { Header, HeaderBody, Body } from "./styles";
+import AsteroidCard from "../AsteroidCard";
+import Header from "./Header";
+
+import { Body } from "./styles";
+
+import { Animations } from "../../utils/Animations";
 
 export default function LandingPage() {
   const [asteroids, setAsteroids] = useState(null);
+
+  const AsteroidCardMemoized = memo(
+    AsteroidCard,
+    (prevProps, nextProps) => prevProps.asteroid.id === nextProps.asteroid.id
+  );
 
   const randomAsteroid = (asteroids) =>
     asteroids[Math.floor(Math.random() * asteroids.length)];
@@ -28,14 +38,15 @@ export default function LandingPage() {
   return (
     <>
       <Header>
-        <HeaderBody>
-          {asteroids && (
-            <AsteroidCard
-              id='asteroid-card'
-              asteroid={randomAsteroid(asteroids)}
-            />
-          )}
-        </HeaderBody>
+        {asteroids && (
+          <motion.div
+            id='asteroid-card-motion'
+            whileHover={{ scale: 1.05 }}
+            {...Animations.fadeRightIn}
+          >
+            <AsteroidCardMemoized asteroid={randomAsteroid(asteroids)} />
+          </motion.div>
+        )}
       </Header>
       <Body></Body>
     </>
