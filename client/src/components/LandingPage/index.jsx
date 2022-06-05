@@ -1,6 +1,11 @@
 import { useState, useEffect, memo } from "react";
 import { motion } from "framer-motion";
 
+<<<<<<< HEAD
+=======
+import { Body, Container } from "./styles";
+
+>>>>>>> 893d1ad (fix: fixed overflow on project)
 import API from "../../services/api";
 import GetRandomIntfromInterval from "../../utils/GetRandomIntFromInterval";
 import { Animations } from "../../utils/Animations";
