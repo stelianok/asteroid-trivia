@@ -6,7 +6,6 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  min-width: 400px;
   max-width: 600px;
 
   padding: 20px 20px;
@@ -25,6 +24,11 @@ const CardGroup = styled.div`
 
   & > * {
     letter-spacing: -0.02em;
+  }
+
+  @media (max-width: 768px) {
+    gap: 0;
+    justify-content: center;
   }
 `;
 

@@ -12,6 +12,10 @@ const NavigationBox = styled(Header)`
 const NavigationContainer = styled(Group)`
   width: 100%;
   flex-wrap: nowrap;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 const ActionsGroup = styled(Group)`
@@ -31,6 +35,10 @@ const ActionsGroup = styled(Group)`
     &:hover {
       background-color: #5e2990;
     }
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
   }
 `;
 
