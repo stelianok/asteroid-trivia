@@ -20,7 +20,6 @@ const CardContainer = styled.div`
 `;
 
 const CardSection = styled.section`
-  width: 100%;
   padding: ${(props) => (props.padding ? props.padding : "0")};
 
   display: flex;
