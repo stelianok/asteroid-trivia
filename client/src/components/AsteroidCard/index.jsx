@@ -1,16 +1,28 @@
 import {
+<<<<<<< HEAD
   BooleanValue,
+=======
+>>>>>>> f8554f7 (fix: update branch)
   CardContainer,
   CardSection,
   CardSectionGroup,
   CardTitle,
   InformationItem,
+<<<<<<< HEAD
+=======
+  VerticaLine,
+>>>>>>> f8554f7 (fix: update branch)
 } from "./styles";
 
 import Asteroid from "../../assets/img/Asteroid.svg";
 
+<<<<<<< HEAD
 import { SpaceIcons } from "../../config/assets";
 import commify from "../../helpers/functions";
+=======
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+>>>>>>> f8554f7 (fix: update branch)
 
 const meteor = {
   id: "2000433",
@@ -75,13 +87,17 @@ export default function AsteroidCard() {
     ],
   } = meteor;
 
+<<<<<<< HEAD
   console.log(SpaceIcons);
 
+=======
+>>>>>>> f8554f7 (fix: update branch)
   return (
     <CardContainer>
       <CardSection padding='0'>
         <span id='asteroid-id'>#{id}</span>
         <img src={Asteroid} alt='Asteroid' width={250} />
+<<<<<<< HEAD
         <label
           htmlFor='orbit-body'
           aria-label='Celestial body that the asteroid is orbiting'
@@ -92,6 +108,12 @@ export default function AsteroidCard() {
             alt='Celestial body that the asteroid is orbiting'
           />
           <span id='orbit-body'>{`Orbiting body:  ${orbiting_body}`}</span>
+=======
+        <label htmlFor='orbit-body'>
+          <img src={Asteroid} alt='Asteroid' width={20} />
+          Orbiting body:
+          <span id='orbit-body'> {orbiting_body}</span>
+>>>>>>> f8554f7 (fix: update branch)
         </label>
       </CardSection>
       <CardSection>
@@ -100,13 +122,25 @@ export default function AsteroidCard() {
           <CardSectionGroup>
             <div className='container'>
               <InformationItem>
+<<<<<<< HEAD
                 <span className='emoji'>🗓️</span>
+=======
+                <img src={Asteroid} alt='Is Danger?' />
+                <div>
+                  <h3>Is hazardous:</h3>
+                  <span>{isHazardous ? "Yes" : "No"}</span>
+                </div>
+              </InformationItem>
+              <InformationItem>
+                <img src={Asteroid} alt='Is Danger?' />
+>>>>>>> f8554f7 (fix: update branch)
                 <div>
                   <h3>First Seen:</h3>
                   <span>{first_seen}</span>
                 </div>
               </InformationItem>
               <InformationItem>
+<<<<<<< HEAD
                 <span className='emoji'>{isHazardous ? "⚠️" : "✅"}</span>
                 <div>
                   <h3>Is hazardous:</h3>
@@ -117,6 +151,9 @@ export default function AsteroidCard() {
               </InformationItem>
               <InformationItem>
                 <span className='emoji'>⏱️</span>
+=======
+                <img src={Asteroid} alt='Is Danger?' />
+>>>>>>> f8554f7 (fix: update branch)
                 <div>
                   <h3>Relative Velocity:</h3>
                   <span>
@@ -130,6 +167,7 @@ export default function AsteroidCard() {
             <div className='container'>
               <h3>Missed distance:</h3>
               <InformationItem>
+<<<<<<< HEAD
                 <img
                   src={SpaceIcons["Sun"]?.image}
                   width={40}
@@ -166,6 +204,37 @@ export default function AsteroidCard() {
           </CardSectionGroup>
         </CardSection>
       </CardSection>
+=======
+                <img src={Asteroid} alt='Is Danger?' />
+                <div>
+                  <h3>Astronomical:</h3>
+                  <span>{Number(astronomical).toPrecision(10)}</span>
+                </div>
+              </InformationItem>
+              <InformationItem>
+                <img src={Asteroid} alt='Is Danger?' />
+                <div>
+                  <h3>kilometers:</h3>
+                  <span>{Number(kilometers).toPrecision(10)}</span>
+                </div>
+              </InformationItem>
+            </div>
+            <InformationItem>
+              <img src={Asteroid} alt='Is Danger?' />
+              <div>
+                <h3>lunar:</h3>
+                <span>{Number(lunar).toPrecision(10)}</span>
+              </div>
+            </InformationItem>
+          </CardSectionGroup>
+        </CardSection>
+      </CardSection>
+      <CardSection>
+        <VerticaLine>
+          <FontAwesomeIcon icon={faChevronRight} size='2x' />
+        </VerticaLine>
+      </CardSection>
+>>>>>>> f8554f7 (fix: update branch)
     </CardContainer>
   );
 }

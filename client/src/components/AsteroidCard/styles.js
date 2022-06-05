@@ -9,7 +9,11 @@ const CardContainer = styled.div`
 
   gap: 40px;
 
+<<<<<<< HEAD
   background-color: #0a0a0af2;
+=======
+  background-color: #0a0a0abd;
+>>>>>>> f8554f7 (fix: update branch)
   border-radius: 15px;
 
   & > * {
@@ -32,6 +36,7 @@ const CardSection = styled.section`
     font-size: 0.8rem;
   }
 
+<<<<<<< HEAD
   & > label {
     display: flex;
     align-items: center;
@@ -41,6 +46,8 @@ const CardSection = styled.section`
     }
   }
 
+=======
+>>>>>>> f8554f7 (fix: update branch)
   & > img {
     align-self: center;
   }
@@ -63,8 +70,11 @@ const CardSectionGroup = styled.div`
 
   & > h2,
   h3 {
+<<<<<<< HEAD
     text-transform: capitalize;
     font-size: 1.2rem;
+=======
+>>>>>>> f8554f7 (fix: update branch)
     font-weight: normal;
     margin: 0;
   }
@@ -79,6 +89,7 @@ const InformationItem = styled.div`
     display: flex;
     flex-direction: column;
 
+<<<<<<< HEAD
     margin-left: 1rem;
 
     & > span {
@@ -91,12 +102,18 @@ const InformationItem = styled.div`
       font-size: 1.1rem;
       color: #fff;
       // color: #c7c7c7;
+=======
+    & > span {
+      font-size: 1rem;
+      color: #9f9f9f;
+>>>>>>> f8554f7 (fix: update branch)
     }
   }
 
   & > img {
     width: 1.5rem;
     height: 1.5rem;
+<<<<<<< HEAD
   }
 
   & > .emoji {
@@ -109,6 +126,23 @@ const BooleanValue = styled.span`
   color: ${({ value: isDanger }) =>
     isDanger ? "#ff0000" : "#00ff00"} !important;
   font-weight: 500;
+=======
+    margin-right: 1rem;
+  }
+`;
+
+const VerticaLine = styled.div`
+  display: flex;
+  align-items: center;
+
+  & > svg {
+    margin-left: 0.5rem;
+    color: #ffffffe0;
+  }
+
+  border-left: 2px solid #ffffff9e;
+  height: 100%;
+>>>>>>> f8554f7 (fix: update branch)
 `;
 
 const CardTitle = styled.h1`
@@ -127,5 +161,9 @@ export {
   CardTitle,
   CardSectionGroup,
   InformationItem,
+<<<<<<< HEAD
   BooleanValue,
+=======
+  VerticaLine,
+>>>>>>> f8554f7 (fix: update branch)
 };
