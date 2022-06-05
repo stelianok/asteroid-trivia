@@ -9,6 +9,7 @@ import { Animations } from "../../utils/Animations";
 
 import AsteroidCard from "../AsteroidCard";
 import Header from "./Header";
+import AsteroidTriviaCard from "../AsteroidTriviaCard";
 
 export default function LandingPage() {
   const [asteroids, setAsteroids] = useState(null);
@@ -54,7 +55,11 @@ export default function LandingPage() {
           </motion.div>
         )}
       </Header>
-      <Body></Body>
+      <Body>
+        {asteroids && (
+          <AsteroidTriviaCard asteroids={asteroids} triviaType="speed" />
+        )}
+      </Body>
     </>
   );
 }
