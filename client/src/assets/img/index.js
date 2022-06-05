@@ -1,6 +1,6 @@
 import Asteroid from "./Asteroid.svg";
 import RealAsteroid from "./Asteroid2.svg";
-import Meteor from "./Meteor.svg";
+import FlameAsteroid from "./Flame-Asteroid.svg";
 import Moon from "./Moon.svg";
 import Earth from "./Earth.svg";
 import Sun from "./Sun.svg";
@@ -17,7 +17,7 @@ import Noise from "./Noise.png";
 export {
   Asteroid,
   RealAsteroid,
-  Meteor,
+  FlameAsteroid,
   Moon,
   Earth,
   Sun,

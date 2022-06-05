@@ -1,14 +1,19 @@
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  /* width: fit-content; */
   min-width: 400px;
   max-width: 600px;
-  display: flex;
+
   padding: 20px 20px;
+
+  display: flex;
   gap: 40px;
+
   background-color: #0a0a0af2;
   border-radius: 15px;
+
+  z-index: 1001;
+
   & > * {
     letter-spacing: -0.02em;
   }
@@ -17,12 +22,12 @@ const CardContainer = styled.div`
 const CardSection = styled.section`
   width: 100%;
   padding: ${(props) => (props.padding ? props.padding : "0")};
-  
+
   display: flex;
   flex-direction: ${(props) => (props.direction ? props.direction : "column")};
   justify-content: space-between;
   gap: 35px;
-  
+
   color: #fff;
   overflow: hidden;
 
@@ -52,11 +57,13 @@ const CardSection = styled.section`
 const CardSectionGroup = styled.div`
   display: flex;
   flex-direction: column;
+
   & > .container {
     display: flex;
     flex-direction: column;
     gap: 5px;
   }
+  
   & > h2,
   h3 {
     text-transform: capitalize;

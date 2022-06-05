@@ -18,11 +18,6 @@ export const SpaceIcons = {
     image: Images.RealAsteroid,
     description: "Real Asteroid",
   },
-  Meteor: {
-    name: "Meteor",
-    image: Images.Meteor,
-    description: "Meteor",
-  },
   Moon: {
     name: "Moon",
     image: Images.Moon,
@@ -57,7 +52,7 @@ export const SpaceIcons = {
  * @property {String} image - Image URL.
  * @property {String} description - Description of the asset.
  */
-export const SpacePlanets = {
+export const SpaceImages = {
   Earth: {
     name: "Earth",
     image: Images.EarthPlanet,
@@ -73,6 +68,11 @@ export const SpacePlanets = {
     image: Images.MarsPlanet,
     description:
       "Mars is a planet in our solar system, with a diameter of 6,779 km and reddish-brown color",
+  },
+  FlameAsteroid: {
+    name: "FlameAsteroid",
+    image: Images.FlameAsteroid,
+    description: "FlameAsteroid",
   },
 };
 
