@@ -7,10 +7,8 @@ import { Actions } from "../../../config/actions";
 import { MediaQuery } from "@mantine/core";
 
 export default function NavigationBar({ actions }) {
-  const colorScheme = useColorScheme();
-  const Logo = ApplicationIcons.HorizontalLogo.theme[colorScheme];
-
-  console.log(ApplicationIcons.HorizontalLogo.theme[colorScheme]);
+  const colorScheme = useColorScheme(),
+    Logo = ApplicationIcons.HorizontalLogo.theme[colorScheme];
 
   return (
     <NavigationBox id='app-navigation-bar' py={20} px={40}>
