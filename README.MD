@@ -29,27 +29,7 @@
       </a>
     </div>
     <div>
-      <a href="https://www.linkedin.com/in/kaua-steliano/">
-        <img alt="Made by" src="https://img.shields.io/badge/made%20by-Kauã%20Steliano-gree">
-      </a>
-    </div>
-    <div>
-      <a href="https://www.linkedin.com/in/vinicius-fiedler">
-        <img alt="Made by" src="https://img.shields.io/badge/made%20by-Vinicius%20Fiedler-gree">
-      </a>
-    </div>
-    </div>
-  <div>
-  <img alt="GitHub" src="https://img.shields.io/github/license/stelianok/codedamn-hackathon-project">
-  </div>
-</div>
-
-
-<p align="center">
   <a href="#-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-how-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-license">License</a>
 </p>
 
