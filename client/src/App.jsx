@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
+import { useToggle } from "@mantine/hooks";
 
 import { MantineProvider, ColorSchemeProvider } from "@mantine/core";
 import axios from "axios";
-// import AsteroidTriviaCard from './components/AsteroidTriviaCard';
-
-import { useToggle } from "@mantine/hooks";
 
 import { ApplicationTheme } from "./config/theme";
 
+// import AsteroidTriviaCard from './components/AsteroidTriviaCard';
 import LandingPage from "./components/LandingPage";
 import Layout from "./components/Layout";
 
@@ -26,7 +25,7 @@ function App() {
       setAsteroids(response.data.near_earth_objects);
     });
   }, []);
-  
+
   return (
     <ColorSchemeProvider
       colorScheme={colorScheme}
