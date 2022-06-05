@@ -1,19 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from 'react';
 import axios from "axios";
 import { useCallback } from 'react';
 
 import {CalculateSpeed, CalculateWidth} from "./utils/CalculateTrivia";
-
-import LandingPage from "./components/LandingPage";
-import AsteroidCard from "./components/AsteroidCard";
-
-const baseURL =
-  "https://api.nasa.gov/neo/rest/v1/neo/browse/?api_key=XbOL6eVBSgeONZepEUOQhgEODrnISyPUHht7iTsC";
-
-function App() {
-  function GetRandomPlanet() {
-    console.log("planeta aleatório");
-  }
 
 
 const baseURL = "https://api.nasa.gov/neo/rest/v1/neo/browse/?api_key=XbOL6eVBSgeONZepEUOQhgEODrnISyPUHht7iTsC";
@@ -77,23 +66,15 @@ function App() {
     }
     console.warn(random);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      await axios
-        .get(baseURL)
-        .then(({ data }) => {
-          setMeteor(
-            data.near_earth_objects[Object.keys(data.near_earth_objects)[0]]
-          );
-          console.log(data.near_earth_objects[0]);
-          GetRandomPlanet();
-        })
-        .catch((err) => console.error(err));
-    };
-
-    fetchData();
+    setMeteor(asteroids[random]);
   }, []);
 
+  useEffect(() => { 
+    axios.get(baseURL).then((response) => {
+      getRandomAsteroid(response.data.near_earth_objects)
+    });
+  },[]);
+ 
   return (
     <div>
       <strong>The {meteor.name} is... </strong>
