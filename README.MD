@@ -29,7 +29,7 @@
       </a>
     </div>
     <div>
-      <a href="https://www.linkedin.com/in/stelianok/">
+      <a href="https://www.linkedin.com/in/kaua-steliano/">
         <img alt="Made by" src="https://img.shields.io/badge/made%20by-Kauã%20Steliano-gree">
       </a>
     </div>
@@ -150,4 +150,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with 💜 &nbsp;by 👋 &nbsp;[Cassiano Rodrigues](https://www.linkedin.com/in/stelianok/), [Kauã Steliano](https://www.linkedin.com/in/stelianok/) and [Vinicius Fiedler](https://www.linkedin.com/in/vinicius-fiedler)
+Made with 💜 &nbsp;by 👋 &nbsp;[Cassiano Rodrigues](https://github.com/kszinhu), [Kauã Steliano](https://github.com/stelianok) and [Vinicius Fiedler](https://github.com/viniFiedler)
