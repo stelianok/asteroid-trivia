@@ -20,7 +20,7 @@ export default function LandingPage() {
   );
 
   const randomAsteroid = (asteroids) =>
-    asteroids[Math.floor(Math.random() * asteroids.length)];
+    asteroids[GetRandomIntfromInterval(0, asteroids.length - 1)];
 
   useEffect(() => {
     async function fetchData() {
@@ -57,7 +57,7 @@ export default function LandingPage() {
       </Header>
       <Body>
         {asteroids && (
-          <AsteroidTriviaCard asteroids={asteroids} triviaType="speed" />
+          <AsteroidTriviaCard asteroidData={randomAsteroid(asteroids)} triviaType="speed" />
         )}
       </Body>
     </>
