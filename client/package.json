@@ -25,8 +25,8 @@
     "styled-components": "^5"
   },
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
+    "start": "vite --port 1337 --host",
+    "dev": "vite --port 1337 --host",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -48,7 +48,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "vite-plugin-babel-macros": "^1.0.6"
-  }
+  "devDependencies": {}
 }
