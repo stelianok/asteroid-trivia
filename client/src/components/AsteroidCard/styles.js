@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  width: fit-content;
+  /* width: fit-content; */
+  min-width: 400px;
   max-width: 600px;
   display: flex;
   padding: 20px 20px;
@@ -14,25 +15,34 @@ const CardContainer = styled.div`
 `;
 
 const CardSection = styled.section`
-  display: flex;
+  width: 100%;
   padding: ${(props) => (props.padding ? props.padding : "0")};
+  
+  display: flex;
   flex-direction: ${(props) => (props.direction ? props.direction : "column")};
-  gap: 35px;
-  color: #fff;
   justify-content: space-between;
+  gap: 35px;
+  
+  color: #fff;
+  overflow: hidden;
+
   & > span {
     font-size: 0.8rem;
   }
+
   & > label {
     display: flex;
     align-items: center;
+
     & > img {
       margin-right: 1rem;
     }
   }
+
   & > img {
     align-self: center;
   }
+
   #asteroid-id {
     font-size: 0.7rem;
     opacity: 0.8;
@@ -66,13 +76,11 @@ const InformationItem = styled.div`
     margin-left: 1rem;
     & > span {
       font-size: 1rem;
-      // color: #fff;
       color: #c7c7c7;
     }
     & > h3 {
       font-size: 1.1rem;
       color: #fff;
-      // color: #c7c7c7;
     }
   }
   & > img {
@@ -94,7 +102,14 @@ const BooleanValue = styled.span`
 const CardTitle = styled.h1`
   font-size: 1.5rem;
   font-weight: 700;
+
+  line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
   text-transform: uppercase;
+
   margin: 0;
   color: #a976da;
 `;
