@@ -50,14 +50,14 @@ export default function AsteroidCard({ asteroid }) {
                 width={30}
                 alt='Celestial body that the asteroid is orbiting'
               />
-              <span id='orbit-body'>{`Orbiting body:  ${orbiting_body}`}</span>
+              <span id='orbit-body'>{` Orbiting body:  ${orbiting_body}`}</span>
             </span>
           </CardSection>
         </MediaQuery>
         <CardSection>
           <div>
             <CardTitle>{name}</CardTitle>
-            <MediaQuery smallerThan={768}>
+            <MediaQuery largerThan={768} styles={{ display: "none" }}>
               <span id='asteroid-id'>#{id}</span>
             </MediaQuery>
           </div>

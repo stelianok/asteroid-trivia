@@ -1,7 +1,7 @@
 import { useState, useEffect, memo } from "react";
 import { motion } from "framer-motion";
 
-import { Body } from "./styles";
+import { Body, Container } from "./styles";
 
 import API from "../../services/api";
 import GetRandomIntfromInterval from "../../utils/GetRandomIntFromInterval";
@@ -43,7 +43,7 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <>
+    <Container>
       <Header>
         {selectedAsteroid && (
           <motion.div
@@ -60,6 +60,6 @@ export default function LandingPage() {
           <AsteroidTriviaCard asteroidData={selectedAsteroid} triviaType="speed" />
         )}
       </Body>
-    </>
+    </Container>
   );
 }
