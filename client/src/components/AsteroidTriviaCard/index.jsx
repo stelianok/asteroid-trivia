@@ -51,7 +51,6 @@ export default function AsteroidTriviaCard({
 
     console.warn(`Selected trivia asteroid ${randomFormattedAsteroid.name}`);
 
-<<<<<<< HEAD
   }, []);
 
   const getRandomAsteroid = useCallback((asteroids) => {
@@ -63,8 +62,6 @@ export default function AsteroidTriviaCard({
     setAsteroid(GetUsefulAsteroidData(asteroids[randomIndex]));
 
     setAsteroid(randomFormattedAsteroid);
-=======
->>>>>>> 8330759 (Added asteroid trivia card to landing page)
   }, []);
 
   useEffect(() => {
