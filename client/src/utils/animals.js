@@ -84,43 +84,36 @@ const animalsSpeed = [
       "icon": "🐋",
       "width": 24
     },
-    ,
     {
       "name": "Shark",
       "icon": "🦈",
       "width": 6.4
-    }
-    ,
+    },
     {
       "name": "Giraffe",
       "icon": "🦒",
       "width": 6
-    }
-    ,
+    },
     {
       "name": "Elephant",
       "icon": "🐘",
       "width": 6 
-    }
-    ,
+    },
     {
       "name": "Octopus",
       "icon": "🐙",
       "width": 5
-    }
-    ,
+    },
     {
       "name": "White rhino",
       "icon": "🦏",
       "width": 4
-    }
-    ,
+    },
     {
       "name": "Hipoppotamus",
       "icon": "🦛",
       "width": 3.6
-    }
-    ,
+    },
     {
       "name": "Indian Peafowl",
       "icon": "🦚",
