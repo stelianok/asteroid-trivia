@@ -22,7 +22,6 @@ const Title = styled(TitleComponent)`
   font-weight: bolder;
   font-family: "Work Sans", sans-serif;
   font-size: 4rem;
-
   color: #fff;
   margin: 0;
 `;
