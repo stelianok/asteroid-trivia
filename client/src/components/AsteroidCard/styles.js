@@ -44,15 +44,13 @@ const CardSection = styled.section`
   overflow: hidden;
 
   & > span {
-    font-size: 0.8rem;
-  }
-
-  & > label {
     display: flex;
     align-items: center;
 
+    font-size: 0.8rem;
+
     & > img {
-      margin-right: 1rem;
+      margin-right: 0.5rem;
     }
   }
 
