@@ -51,6 +51,16 @@ export default function AsteroidTriviaCard({
 
     console.warn(`Selected trivia asteroid ${randomFormattedAsteroid.name}`);
 
+  }, []);
+
+  const getRandomAsteroid = useCallback((asteroids) => {
+    const asteroidArraySize = asteroids.length - 1;
+
+    let randomIndex = GetRandomIntfromInterval(0, asteroidArraySize);
+
+    console.warn(`Selected trivia asteroid ${asteroids[randomIndex].name}`);
+    setAsteroid(GetUsefulAsteroidData(asteroids[randomIndex]));
+
     setAsteroid(randomFormattedAsteroid);
   }, []);
 
