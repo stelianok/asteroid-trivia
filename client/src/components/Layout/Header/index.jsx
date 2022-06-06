@@ -1,3 +1,4 @@
+import { useOs } from "@mantine/hooks";
 import {
   HeaderBody,
   HeaderBackground,
@@ -8,6 +9,9 @@ import { HeaderAnimationConfig } from "../../../utils/Animations";
 import { BasePlanet } from "./Planets";
 
 export default function Header({ children }) {
+  const CurrentOs = useOs(),
+    mobilesOs = ["ios", "android"];
+
   return (
     <HeaderContainer>
       <HeaderBackground>
@@ -40,7 +44,7 @@ export default function Header({ children }) {
             />
           );
         })}
-        {[...Array(30)].map((_, index) => {
+        {[...Array(CurrentOs.includes(mobilesOs) ? 10 : 30)].map((_, index) => {
           const randomPosition = () =>
             `${Math.floor(Math.random() * 100 + 5).toString()}%`;
           const rotateNumber = Math.floor(Math.random() * 360);

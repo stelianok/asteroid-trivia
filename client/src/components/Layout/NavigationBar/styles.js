@@ -1,4 +1,4 @@
-import { Group, Header } from '@mantine/core'
+import { Anchor, Group, Header } from '@mantine/core'
 
 import styled from "styled-components";
 
@@ -22,6 +22,7 @@ const ActionsGroup = styled(Group)`
   gap: 2.5rem;
 
   & > a {
+    text-decoration: none;
     color: #fff;
     font-size: 1rem;
     cursor: pointer;

@@ -1,4 +1,5 @@
-import { MediaQuery, useMantineTheme } from "@mantine/core";
+import { forwardRef } from "react";
+import { MediaQuery } from "@mantine/core";
 
 import {
   BooleanValue,
@@ -16,8 +17,7 @@ import Asteroid from "../../assets/img/Asteroid.svg";
 import { SpaceIcons } from "../../config/assets";
 import Commify from "../../utils/Commify";
 
-export default function AsteroidCard({ asteroid }) {
-  const theme = useMantineTheme();
+const AsteroidCard = forwardRef(({ asteroid }, ref) => {
   const {
     id,
     name,
@@ -33,7 +33,7 @@ export default function AsteroidCard({ asteroid }) {
   } = asteroid;
 
   return (
-    <CardContainer>
+    <CardContainer ref={ref}>
       <CardGroup>
         <MediaQuery
           smallerThan={768}
@@ -50,14 +50,14 @@ export default function AsteroidCard({ asteroid }) {
                 width={30}
                 alt='Celestial body that the asteroid is orbiting'
               />
-              <span id='orbit-body'>{`Orbiting body:  ${orbiting_body}`}</span>
+              <span id='orbit-body'>{` Orbiting body:  ${orbiting_body}`}</span>
             </span>
           </CardSection>
         </MediaQuery>
         <CardSection>
           <div>
             <CardTitle>{name}</CardTitle>
-            <MediaQuery smallerThan={768}>
+            <MediaQuery largerThan={768} styles={{ display: "none" }}>
               <span id='asteroid-id'>#{id}</span>
             </MediaQuery>
           </div>
@@ -139,4 +139,6 @@ export default function AsteroidCard({ asteroid }) {
       </Button>
     </CardContainer>
   );
-}
+});
+
+export default AsteroidCard;

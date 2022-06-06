@@ -3,10 +3,6 @@ import styled from "styled-components";
 const Header = styled.div`
   width: 100%;
   height: 100%;
-
-  margin: 10px 0;
-
-  overflow: hidden;
 `;
 
 const HeaderBody = styled.div`
