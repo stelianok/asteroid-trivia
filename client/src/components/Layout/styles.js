@@ -8,7 +8,7 @@ const AppLayout = styled(AppShell)`
   background-image: url(${Patterns.Noise.path});
   background-blend-mode: overlay;
 
-  overflow-x: hidden;
+  overflow: hidden;
 `;
 
 export { AppLayout };

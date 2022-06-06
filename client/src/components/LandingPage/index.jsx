@@ -1,18 +1,23 @@
 import { useState, useEffect, memo } from "react";
 import { motion } from "framer-motion";
 
-import { Body, Container } from "./styles";
-
 import API from "../../services/api";
 import GetRandomIntfromInterval from "../../utils/GetRandomIntFromInterval";
 import { Animations } from "../../utils/Animations";
+
+import { Body, Title, Container, TriviaGroup } from "./styles";
 
 import AsteroidCard from "../AsteroidCard";
 import Header from "./Header";
 import AsteroidTriviaCard from "../AsteroidTriviaCard";
 
-export default function LandingPage() {
+export default function LandingPage({ refs }) {
   const [selectedAsteroid, setSelectedAsteroid] = useState(null);
+
+  const {
+    asteroid: { current: asteroidRef },
+    trivia: { current: triviaRef },
+  } = refs;
 
   const AsteroidCardMemoized = memo(
     AsteroidCard,
@@ -24,15 +29,13 @@ export default function LandingPage() {
 
   useEffect(() => {
     async function fetchData() {
-      await API.get("/neo/browse/",
-        {
-          params: {
-            page: GetRandomIntfromInterval(1, 1469)
-          }
-        })
+      await API.get("/neo/browse/", {
+        params: {
+          page: GetRandomIntfromInterval(1, 1469),
+        },
+      })
         .then(({ data }) => {
           setSelectedAsteroid(randomAsteroid(data.near_earth_objects));
-
         })
         .catch((err) => {
           console.error(err);
@@ -51,14 +54,60 @@ export default function LandingPage() {
             whileHover={{ scale: 1.05 }}
             {...Animations.fadeRightIn}
           >
-            <AsteroidCardMemoized asteroid={selectedAsteroid} />
+            <AsteroidCardMemoized
+              id='asteroid-card-component'
+              asteroid={selectedAsteroid}
+              ref={asteroidRef}
+            />
           </motion.div>
         )}
       </Header>
       <Body>
-        {selectedAsteroid && (
-          <AsteroidTriviaCard asteroidData={selectedAsteroid} triviaType="speed" />
-        )}
+        <Title>Trivia Cards</Title>
+        <section>
+          {selectedAsteroid && (
+            <TriviaGroup>
+              <motion.div
+                initial={{ opacity: 0, y: 300 }}
+                whileInView={{
+                  opacity: 1,
+                  y: 50,
+                  transition: {
+                    type: "spring",
+                    bounce: 0.4,
+                    duration: 0.8,
+                  },
+                }}
+              >
+                <AsteroidTriviaCard
+                  id='speed-trivia-card-component'
+                  asteroidData={selectedAsteroid}
+                  triviaType='speed'
+                  ref={triviaRef}
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 300 }}
+                whileInView={{
+                  opacity: 1,
+                  y: 50,
+                  transition: {
+                    type: "spring",
+                    bounce: 0.4,
+                    duration: 0.8,
+                  },
+                }}
+              >
+                <AsteroidTriviaCard
+                  id='width-trivia-card-component'
+                  asteroidData={selectedAsteroid}
+                  triviaType='width'
+                  ref={triviaRef}
+                />
+              </motion.div>
+            </TriviaGroup>
+          )}
+        </section>
       </Body>
     </Container>
   );

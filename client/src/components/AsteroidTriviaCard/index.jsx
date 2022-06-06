@@ -3,8 +3,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { CalculateSpeed, CalculateWidth } from "../../utils/CalculateTrivia";
 import { animalsSpeed, animalsWidth } from "../../utils/animals";
 
-import { Container } from "./styles";
-import GetRandomIntfromInterval from "../../utils/GetRandomIntFromInterval";
+import { CardGroup, Item, ListAnimals } from "./styles";
 
 //trivia type must be speed or diameter
 export default function AsteroidTriviaCard({
@@ -60,38 +59,40 @@ export default function AsteroidTriviaCard({
   }, []);
 
   return (
-    <Container>
+    <CardGroup>
       {triviaType == "speed" ? (
         <>
-          <strong>Speed Comparison</strong>
-          <ul>
+          <h2>Speed Comparison</h2>
+          <ListAnimals>
             {asteroid &&
-              animalsSpeed.map((animal) => (
-                <li key={animal.name}>
-                  {`${animal.icon} ${CalculateSpeed(
-                    asteroid.relative_velocity,
-                    animal.speed
-                  )} times faster than an ${animal.name}`}
-                </li>
+              animalsSpeed.map(({ speed, name, icon }) => (
+                <Item key={name} emote={icon}>
+                  <span id={`speed-trivia-${name}`}>
+                    {CalculateSpeed(asteroid.relative_velocity, speed)}
+                  </span>
+                  {" times faster than an "}
+                  <strong id={`animal-trivia-${name}`}>{name}</strong>
+                </Item>
               ))}
-          </ul>
+          </ListAnimals>
         </>
       ) : (
         <>
-          <strong>The asteroid diameter is equal to: </strong>
-          <ul>
+          <h2>The asteroid diameter is equal to: </h2>
+          <ListAnimals>
             {asteroid &&
-              animalsWidth.map((animal) => (
-                <li key={animal.name}>
-                  {`${animal.icon} ${CalculateWidth(
-                    parseFloat(asteroid.average_estimated_diameter),
-                    animal.width
-                  )} ${animal.name} aligned`}
-                </li>
+              animalsWidth.map(({ name, width, icon }) => (
+                <Item key={name} emote={icon}>
+                  <span id={`width-trivia-${name}`}>
+                    {CalculateWidth(asteroid.average_estimated_diameter, width)}
+                  </span>
+                  {" times the diameter of a "}
+                  <strong id={`animal-trivia-${name}`}>{name}</strong>
+                </Item>
               ))}
-          </ul>
+          </ListAnimals>
         </>
       )}
-    </Container>
+    </CardGroup>
   );
 }
