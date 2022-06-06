@@ -15,13 +15,13 @@ export const Actions = {
     ref: "asteroidTriviaRef",
     id: "asteroid-trivia-card-component",
     ariaLabel:
-      "Action to redirect to the page sector that obtains the information about asteroids",
+      "Action to redirect to the page sector that obtains the comparison of asteroids and animals",
   },
   About: {
     name: "About",
     path: "#about",
     key: "about-action",
-    id: "asteroid-trivia-card-component",
+    id: "about-me",
     ariaLabel:
       "Action to redirect to the page sector that obtains the information about the project",
   },

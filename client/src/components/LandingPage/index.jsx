@@ -8,8 +8,9 @@ import { Animations } from "../../utils/Animations";
 import { Body, Title, Container, TriviaGroup } from "./styles";
 
 import AsteroidCard from "../AsteroidCard";
-import Header from "./Header";
+import Header from "../Layout/Header";
 import AsteroidTriviaCard from "../AsteroidTriviaCard";
+import ProjectOverview from "../ProjectOverview";
 
 export default function LandingPage({ refs }) {
   const [selectedAsteroid, setSelectedAsteroid] = useState(null);
@@ -78,6 +79,7 @@ export default function LandingPage({ refs }) {
                     duration: 0.8,
                   },
                 }}
+                viewport={{ once: true }}
               >
                 <AsteroidTriviaCard
                   id='speed-trivia-card-component'
@@ -97,6 +99,7 @@ export default function LandingPage({ refs }) {
                     duration: 0.8,
                   },
                 }}
+                viewport={{ once: true }}
               >
                 <AsteroidTriviaCard
                   id='width-trivia-card-component'
@@ -108,6 +111,7 @@ export default function LandingPage({ refs }) {
             </TriviaGroup>
           )}
         </section>
+        <ProjectOverview />
       </Body>
     </Container>
   );

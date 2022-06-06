@@ -22,6 +22,7 @@ const ActionsGroup = styled(Group)`
   gap: 2.5rem;
 
   & > a {
+    text-decoration: none;
     color: #fff;
     font-size: 1rem;
     cursor: pointer;

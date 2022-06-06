@@ -59,7 +59,7 @@ export default function AsteroidTriviaCard({
   }, []);
 
   return (
-    <CardGroup>
+    <CardGroup id='asteroid-trivia-card-component'>
       {triviaType == "speed" ? (
         <>
           <h2>Speed Comparison</h2>

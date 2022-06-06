@@ -2,9 +2,13 @@ import { Group, Title as TitleComponent } from '@mantine/core'
 import styled from "styled-components";
 
 const Body = styled.div`
-  margin: 5rem 2rem;
+  margin: 2rem;
 
   height: 100%;
+
+  & > section {
+    margin: 6rem 0;
+  }
 `;
 
 const Title = styled(TitleComponent)`
