@@ -5,7 +5,14 @@ import API from "../../services/api";
 import GetRandomIntfromInterval from "../../utils/GetRandomIntFromInterval";
 import { Animations } from "../../utils/Animations";
 
-import { Body, Title, Container, TriviaGroup } from "./styles";
+import {
+  Body,
+  Title,
+  Desription,
+  Container,
+  SectionContainer,
+  TriviaGroup,
+} from "./styles";
 
 import AsteroidCard from "../AsteroidCard";
 import Header from "../Layout/Header";
@@ -64,7 +71,12 @@ export default function LandingPage({ refs }) {
         )}
       </Header>
       <Body>
-        <Title>Trivia Cards</Title>
+        <SectionContainer>
+          <Title>Trivia Cards</Title>
+          <Desription>
+            The numbers may seem complicated, but this asteroid is:
+          </Desription>
+        </SectionContainer>
         <section>
           {selectedAsteroid && (
             <TriviaGroup>

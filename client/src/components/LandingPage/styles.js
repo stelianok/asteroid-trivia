@@ -11,12 +11,28 @@ const Body = styled.div`
   }
 `;
 
-const Title = styled(TitleComponent)`
-  font-family: 'Work Sans', sans-serif;
-  font-size: 4rem;
+const Container = styled.div``;
+
+const SectionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  margin-bottom: -0.5rem;
 `;
 
-const Container = styled.div`
+const Title = styled(TitleComponent)`
+  font-weight: bolder;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 4rem;
+  
+  color: #fff;
+  margin: 0;
+`;
+
+const Desription = styled.p`
+  font-size: 1.5rem;
+  margin: 0;
 `;
 
 const TriviaGroup = styled(Group)`
@@ -25,4 +41,4 @@ const TriviaGroup = styled(Group)`
   justify-content: space-around;
 `;
 
-export { Body, Container, TriviaGroup, Title };
+export { Body, Container, TriviaGroup, Title, Desription, SectionContainer };
