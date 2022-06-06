@@ -1,4 +1,5 @@
-import { MediaQuery, useMantineTheme } from "@mantine/core";
+import { forwardRef } from "react";
+import { MediaQuery } from "@mantine/core";
 
 import {
   BooleanValue,
