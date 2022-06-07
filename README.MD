@@ -1,47 +1,29 @@
-<h1 align="center">
-	<img alt="Logo" src="client/public/favicon.ico" width="32px" />
-  AsteroidTrivia
-</h1>
+<div align="center">
+	<img alt="Logo" src="/client/src/assets/img/Logo-X-black.svg" height="80px" />
+</div>
 
-<h3 align="center">
-</h3>
-
-<p align="center"></p>
-
-<div>
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/stelianok/codedamn-hackathon-project">
-  <div id="banner">
-    <div>
-      <img alt="Repository size" src="https://img.shields.io/github/repo-size/stelianok/codedamn-hackathon-project">
-    </div>
-    <div>
-      <a href="https://github.com/stelianok/codedamn-hackathon-project/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/stelianok/codedamn-hackathon-project">
-    </div>
-    <div>
-      <a href="https://github.com/stelianok/codedamn-hackathon-project/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/stelianok/codedamn-hackathon-project">
-  </a>
-    </div>
-    <div>
-      <a href="https://www.linkedin.com/in/kszinhu/">
-        <img alt="Made by" src="https://img.shields.io/badge/made%20by-Cassiano%20Rodrigues-gree">
-      </a>
-    </div>
-    <div>
-      <a href="https://www.linkedin.com/in/kaua-steliano/">
-        <img alt="Made by" src="https://img.shields.io/badge/made%20by-Kauã%20Steliano-gree">
-      </a>
-    </div>
-    <div>
-      <a href="https://www.linkedin.com/in/vinicius-fiedler">
-        <img alt="Made by" src="https://img.shields.io/badge/made%20by-Vinicius%20Fiedler-gree">
-      </a>
-    </div>
-    </div>
-  <div>
-  <img alt="GitHub" src="https://img.shields.io/github/license/stelianok/codedamn-hackathon-project">
-  </div>
+<div id="banner">
+  <p align="center">
+    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/stelianok/codedamn-hackathon-project">
+		<img alt="Repository size" src="https://img.shields.io/github/repo-size/stelianok/codedamn-hackathon-project">
+		<a href="https://github.com/stelianok/codedamn-hackathon-project/commits/master">
+			<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/stelianok/codedamn-hackathon-project">
+		</a>
+		<a href="https://github.com/stelianok/codedamn-hackathon-project/issues">
+			<img alt="Repository issues" src="https://img.shields.io/github/issues/stelianok/codedamn-hackathon-project">
+		</a>
+		<p align="center">
+			<a href="https://www.linkedin.com/in/kszinhu/">
+				<img alt="Made by" src="https://img.shields.io/badge/made%20by-Cassiano%20Rodrigues-gree">
+			</a>
+			<a href="https://www.linkedin.com/in/kaua-steliano/">
+				<img alt="Made by" src="https://img.shields.io/badge/made%20by-Kauã%20Steliano-gree">
+			</a>
+			<a href="https://www.linkedin.com/in/vinicius-fiedler">
+				<img alt="Made by" src="https://img.shields.io/badge/made%20by-Vinicius%20Fiedler-gree">
+			</a>
+		</p>
+	</p>
 </div>
 
 
