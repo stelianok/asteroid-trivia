@@ -1,4 +1,4 @@
-export default function Commify(number_string) {
+export default function commify(number_string) {
   const [integer, decimal] = number_string.split(".");
 
   return (

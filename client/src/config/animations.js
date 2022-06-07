@@ -1,4 +1,4 @@
-const Animations = {
+const animations = {
   fadeRightIn: {
     initial: {
       opacity: 0,
@@ -65,7 +65,7 @@ const Animations = {
   },
 };
 
-const HeaderAnimationConfig = {
+const headerAnimationConfig = {
   planet: {
     drag: true,
     whileDrag: { scale: 1.5 },
@@ -110,4 +110,4 @@ const HeaderAnimationConfig = {
   },
 };
 
-export { Animations, HeaderAnimationConfig };
+export { animations, headerAnimationConfig };
