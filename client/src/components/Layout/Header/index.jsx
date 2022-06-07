@@ -1,11 +1,12 @@
 import { useOs } from "@mantine/hooks";
+
+import { headerAnimationConfig } from "../../../config/animations";
+
 import {
   HeaderBody,
   HeaderBackground,
   Header as HeaderContainer,
 } from "./styles";
-
-import { HeaderAnimationConfig } from "../../../utils/Animations";
 import { BasePlanet } from "./Planets";
 
 export default function Header({ children }) {
@@ -17,13 +18,13 @@ export default function Header({ children }) {
       <HeaderBackground>
         <BasePlanet
           name='Earth'
-          animationConfig={HeaderAnimationConfig.planet}
+          animationConfig={headerAnimationConfig.planet}
           position={{ top: "80%", left: "40%" }}
           size={{ width: "600px", height: "600px" }}
         />
         <BasePlanet
           name='Mars'
-          animationConfig={HeaderAnimationConfig.planet}
+          animationConfig={headerAnimationConfig.planet}
           position={{ top: "15%", left: "5%" }}
           size={{ width: "100px", height: "100px" }}
         />
@@ -38,7 +39,7 @@ export default function Header({ children }) {
             <BasePlanet
               key={`planet-${index}`}
               name='AnotherPlanet'
-              animationConfig={HeaderAnimationConfig.anotherPlanet}
+              animationConfig={headerAnimationConfig.anotherPlanet}
               position={{ top: randomPosition(), left: randomPosition() }}
               size={{ width: randomSize, height: randomSize }}
             />
@@ -54,7 +55,7 @@ export default function Header({ children }) {
               key={`asteroid-${index}`}
               name='FlameAsteroid'
               animationConfig={{
-                ...HeaderAnimationConfig.asteroid,
+                ...headerAnimationConfig.asteroid,
                 initial: { rotate: rotateNumber },
                 animate: {
                   x: rotateNumber < 180 + 45 ? "-1000px" : "1000px",

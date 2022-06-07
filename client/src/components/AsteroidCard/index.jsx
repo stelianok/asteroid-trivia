@@ -1,5 +1,9 @@
-import { forwardRef } from "react";
+import { useContext } from "react";
 import { MediaQuery } from "@mantine/core";
+
+import { AsteroidContext } from "../../contexts/asteroid";
+import { SpaceIcons } from "../../config/assets";
+import { commify } from "../../utils";
 
 import {
   BooleanValue,
@@ -12,28 +16,21 @@ import {
   Button,
 } from "./styles";
 
-import Asteroid from "../../assets/img/Asteroid.svg";
-
-import { SpaceIcons } from "../../config/assets";
-import Commify from "../../utils/Commify";
-
-const AsteroidCard = forwardRef(({ asteroid }, ref) => {
+export default function AsteroidCard({ asteroid }) {
   const {
     id,
     name,
-    is_potentially_hazardous_asteroid: isHazardous,
-    close_approach_data: [
-      {
-        orbiting_body,
-        close_approach_date_full: first_seen,
-        relative_velocity: { kilometers_per_hour },
-        miss_distance: { astronomical, kilometers, lunar },
-      },
-    ],
+    orbitingBody,
+    lastSeen,
+    relativeVelocity,
+    isHazardous,
+    missDistance: { astronomicalDistance, lunarDistance, kilometersDistance },
   } = asteroid;
 
+  const { getRandomAsteroidFromAPI } = useContext(AsteroidContext);
+
   return (
-    <CardContainer ref={ref}>
+    <CardContainer>
       <CardGroup>
         <MediaQuery
           smallerThan={768}
@@ -41,16 +38,16 @@ const AsteroidCard = forwardRef(({ asteroid }, ref) => {
         >
           <CardSection padding='0'>
             <span id='asteroid-id'>#{id}</span>
-            <img src={Asteroid} alt='Asteroid' width={250} />
+            <img src={SpaceIcons.Asteroid.image} alt='Asteroid' width={250} />
             <span aria-label='Celestial body that the asteroid is orbiting'>
               <img
                 src={
-                  SpaceIcons[orbiting_body]?.image ?? SpaceIcons.Default.image
+                  SpaceIcons[orbitingBody]?.image ?? SpaceIcons.Default.image
                 }
                 width={30}
                 alt='Celestial body that the asteroid is orbiting'
               />
-              <span id='orbit-body'>{` Orbiting body:  ${orbiting_body}`}</span>
+              <span id='orbit-body'>{` Orbiting body:  ${orbitingBody}`}</span>
             </span>
           </CardSection>
         </MediaQuery>
@@ -67,8 +64,8 @@ const AsteroidCard = forwardRef(({ asteroid }, ref) => {
                 <InformationItem>
                   <span className='emoji'>🗓️</span>
                   <div>
-                    <h3>First Seen:</h3>
-                    <span>{first_seen}</span>
+                    <h3>Last Seen:</h3>
+                    <span>{lastSeen}</span>
                   </div>
                 </InformationItem>
                 <InformationItem>
@@ -84,9 +81,7 @@ const AsteroidCard = forwardRef(({ asteroid }, ref) => {
                   <span className='emoji'>⏱️</span>
                   <div>
                     <h3>Relative Velocity:</h3>
-                    <span>
-                      {Number(kilometers_per_hour).toPrecision(4)} km/h
-                    </span>
+                    <span>{Number(relativeVelocity).toPrecision(4)} km/h</span>
                   </div>
                 </InformationItem>
               </div>
@@ -103,7 +98,7 @@ const AsteroidCard = forwardRef(({ asteroid }, ref) => {
                   <div>
                     <h3>Astronomical:</h3>
                     <span>
-                      {Number(Commify(astronomical)).toPrecision(4)} ua
+                      {Number(commify(astronomicalDistance)).toPrecision(4)} ua
                     </span>
                   </div>
                 </InformationItem>
@@ -115,7 +110,9 @@ const AsteroidCard = forwardRef(({ asteroid }, ref) => {
                   />
                   <div>
                     <h3>lunar:</h3>
-                    <span>{Number(Commify(lunar)).toPrecision(4)} una</span>
+                    <span>
+                      {Number(commify(lunarDistance)).toPrecision(4)} una
+                    </span>
                   </div>
                 </InformationItem>
                 <InformationItem>
@@ -126,7 +123,9 @@ const AsteroidCard = forwardRef(({ asteroid }, ref) => {
                   />
                   <div>
                     <h3>kilometers:</h3>
-                    <span>{Commify(Number(kilometers).toPrecision(4))} km</span>
+                    <span>
+                      {commify(Number(kilometersDistance).toPrecision(4))} km
+                    </span>
                   </div>
                 </InformationItem>
               </div>
@@ -134,11 +133,13 @@ const AsteroidCard = forwardRef(({ asteroid }, ref) => {
           </CardSection>
         </CardSection>
       </CardGroup>
-      <Button color='#661d78' py={15}>
+      <Button
+        color='#661d78'
+        py={15}
+        onClick={() => getRandomAsteroidFromAPI()}
+      >
         Check another asteroid
       </Button>
     </CardContainer>
   );
-});
-
-export default AsteroidCard;
+}

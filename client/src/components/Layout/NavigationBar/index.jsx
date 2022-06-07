@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { useColorScheme } from "@mantine/hooks";
-=======
-import { useColorScheme, useScrollIntoView } from "@mantine/hooks";
->>>>>>> 1c9d27f (feat: added TriviaCard on LandingPage)
-=======
-import { useColorScheme } from "@mantine/hooks";
->>>>>>> cb2a521 (fix: fixed actions on NavigationBar)
 
 import { ActionsGroup, NavigationBox, NavigationContainer } from "./styles";
 

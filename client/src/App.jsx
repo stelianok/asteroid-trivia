@@ -1,30 +1,14 @@
-import { useToggle, useScrollIntoView } from "@mantine/hooks";
+import { useToggle } from "@mantine/hooks";
 import { MantineProvider, ColorSchemeProvider } from "@mantine/core";
 
 import { ApplicationTheme } from "./config/theme";
 
-// import AsteroidTriviaCard from './components/AsteroidTriviaCard';
+import { AsteroidProvider } from "./contexts/asteroid";
 import LandingPage from "./components/LandingPage";
 import Layout from "./components/Layout";
 
 function App() {
   const [colorScheme, toggleColorScheme] = useToggle("dark", ["light", "dark"]);
-
-  const { scrollIntoView: scrollToAsteroid, targetRef: asteroidRef } =
-    useScrollIntoView({ offset: 60 });
-  const { scrollIntoView: scrollToTrivia, targetRef: triviaRef } =
-    useScrollIntoView({ offset: 60 });
-
-  const refs = {
-    asteroid: {
-      current: asteroidRef,
-      scrollToAsteroid,
-    },
-    trivia: {
-      current: triviaRef,
-      scrollToTrivia,
-    },
-  };
 
   return (
     <ColorSchemeProvider
@@ -36,8 +20,10 @@ function App() {
         withGlobalStyles
         withNormalizeCSS
       >
-        <Layout refs={refs}>
-          <LandingPage refs={refs} />
+        <Layout>
+          <AsteroidProvider>
+            <LandingPage />
+          </AsteroidProvider>
         </Layout>
       </MantineProvider>
     </ColorSchemeProvider>
