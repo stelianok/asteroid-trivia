@@ -78,7 +78,7 @@ And Fill it with you [nasa api key](https://api.nasa.gov/), and  the BaseURL.
 **Clone the project and access the folder**
 
 ```bash
-$ git clone https://github.com/stelianok/codedamn-hackathon-project.git && cd codedamn-hackathon-project
+$ git clone https://github.com/stelianok/asteroid-trivia.git && cd asteroid-trivia
 ```
 
 
